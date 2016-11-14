@@ -14,6 +14,8 @@
 		0447A3D41DD9D4C7001EAE32 /* HWNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A3D31DD9D4C7001EAE32 /* HWNavigationController.m */; };
 		0447A3D71DD9D5F1001EAE32 /* HWMainTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A3D61DD9D5F1001EAE32 /* HWMainTabViewController.m */; };
 		0447A3DA1DD9D84F001EAE32 /* HWMainTabBarViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A3D91DD9D84F001EAE32 /* HWMainTabBarViewModel.m */; };
+		0447A3DD1DD9E432001EAE32 /* HWHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A3DC1DD9E432001EAE32 /* HWHomeViewController.m */; };
+		0447A3E01DD9E801001EAE32 /* HWCareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A3DF1DD9E801001EAE32 /* HWCareViewController.m */; };
 		044FDAC01DD46DED00FA9385 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 044FDABF1DD46DED00FA9385 /* main.m */; };
 		044FDAC31DD46DED00FA9385 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 044FDAC21DD46DED00FA9385 /* AppDelegate.m */; };
 		044FDAC61DD46DED00FA9385 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044FDAC51DD46DED00FA9385 /* ViewController.m */; };
@@ -51,6 +53,10 @@
 		0447A3D61DD9D5F1001EAE32 /* HWMainTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMainTabViewController.m; sourceTree = "<group>"; };
 		0447A3D81DD9D84F001EAE32 /* HWMainTabBarViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMainTabBarViewModel.h; sourceTree = "<group>"; };
 		0447A3D91DD9D84F001EAE32 /* HWMainTabBarViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMainTabBarViewModel.m; sourceTree = "<group>"; };
+		0447A3DB1DD9E432001EAE32 /* HWHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHomeViewController.h; sourceTree = "<group>"; };
+		0447A3DC1DD9E432001EAE32 /* HWHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHomeViewController.m; sourceTree = "<group>"; };
+		0447A3DE1DD9E801001EAE32 /* HWCareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWCareViewController.h; sourceTree = "<group>"; };
+		0447A3DF1DD9E801001EAE32 /* HWCareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWCareViewController.m; sourceTree = "<group>"; };
 		044FDABB1DD46DED00FA9385 /* Reborn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reborn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		044FDABF1DD46DED00FA9385 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		044FDAC11DD46DED00FA9385 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -168,6 +174,10 @@
 				044FDAD51DD46F1800FA9385 /* HWNetwork */,
 				044FDAC41DD46DED00FA9385 /* ViewController.h */,
 				044FDAC51DD46DED00FA9385 /* ViewController.m */,
+				0447A3DB1DD9E432001EAE32 /* HWHomeViewController.h */,
+				0447A3DC1DD9E432001EAE32 /* HWHomeViewController.m */,
+				0447A3DE1DD9E801001EAE32 /* HWCareViewController.h */,
+				0447A3DF1DD9E801001EAE32 /* HWCareViewController.m */,
 				044FDAF81DD475A100FA9385 /* HWRequestTestApi.h */,
 				044FDAF91DD475A100FA9385 /* HWRequestTestApi.m */,
 				044FDAFE1DD5768E00FA9385 /* HWRequestAApi.h */,
@@ -365,6 +375,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0447A3DD1DD9E432001EAE32 /* HWHomeViewController.m in Sources */,
 				0447A3C31DD9715B001EAE32 /* HWWeiBoObject.m in Sources */,
 				044FDAEA1DD46F1800FA9385 /* HWBatchRequest.m in Sources */,
 				0447A3C81DD97542001EAE32 /* HWKeyValueStore.m in Sources */,
@@ -388,6 +399,7 @@
 				044FDB001DD5768E00FA9385 /* HWRequestAApi.m in Sources */,
 				044FDB061DD576A000FA9385 /* HWRequestCApi.m in Sources */,
 				0447A3BF1DD96768001EAE32 /* HWObject.m in Sources */,
+				0447A3E01DD9E801001EAE32 /* HWCareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

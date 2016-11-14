@@ -20,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+  _viewModel = [[HWMainTabBarViewModel alloc] init];
+  [self setupViewControllers];
 }
 
 - (void)didReceiveMemoryWarning {

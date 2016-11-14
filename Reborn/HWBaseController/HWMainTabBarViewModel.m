@@ -7,6 +7,8 @@
 //
 
 #import "HWMainTabBarViewModel.h"
+#import "HWHomeViewController.h"
+#import "HWCareViewController.h"
 
 @interface HWMainTabBarViewModel ()
 
@@ -21,10 +23,12 @@
 - (id)init
 {
   self = [super init];
-  if (self) { // GMViewController, WMHomeContainerController
-    _tabClassArray = @[];
+  if (self) { 
+    _tabClassArray = @[[HWHomeViewController class],
+                       [HWCareViewController class]];
     
-    _tabInfoArray = @[@{@"image":@"home",@"name":@"首页"}];
+    _tabInfoArray = @[@{@"image":@"home",@"name":@"首页"},
+                      @{@"image":@"home",@"name":@"关注"}];
   }
   return self;
 }

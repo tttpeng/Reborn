@@ -9,6 +9,7 @@
 #import "HWMainTabBarViewModel.h"
 #import "HWHomeViewController.h"
 #import "HWCareViewController.h"
+#import "HWMineViewController.h"
 
 @interface HWMainTabBarViewModel ()
 
@@ -25,10 +26,12 @@
   self = [super init];
   if (self) { 
     _tabClassArray = @[[HWHomeViewController class],
-                       [HWCareViewController class]];
+                       [HWCareViewController class],
+                       [HWMineViewController class]];
     
-    _tabInfoArray = @[@{@"image":@"home",@"name":@"首页"},
-                      @{@"image":@"home",@"name":@"关注"}];
+    _tabInfoArray = @[@{@"image" : @"cure",  @"name" : @"首页"},
+                      @{@"image" : @"focus", @"name" : @"关注"},
+                      @{@"image" : @"mine",  @"name" : @"我的"}];
   }
   return self;
 }
@@ -36,7 +39,6 @@
 - (NSInteger)numberOfTabs
 {
   return self.tabClassArray.count;
-  
 }
 
 - (Class)tabClassAtIndex:(NSInteger)index
@@ -46,12 +48,12 @@
 
 - (NSString *)tabImageNameAtIndex:(NSInteger)index{
   NSDictionary *tabItemDic = [_tabInfoArray objectAtIndex:index];
-  return [NSString stringWithFormat:@"menu_%@",[tabItemDic objectForKey:@"image"]];
+  return [NSString stringWithFormat:@"%@_normal",[tabItemDic objectForKey:@"image"]];
 }
 
 - (NSString *)tabImageHLNameAtIndex:(NSInteger)index{
   NSDictionary *tabItemDic = [_tabInfoArray objectAtIndex:index];
-  return [NSString stringWithFormat:@"menu_%@_pr",[tabItemDic objectForKey:@"image"]];
+  return [NSString stringWithFormat:@"%@_selected",[tabItemDic objectForKey:@"image"]];
 }
 
 - (NSString *)tabTitleAtIndex:(NSInteger)index{

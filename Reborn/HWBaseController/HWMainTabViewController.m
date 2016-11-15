@@ -19,14 +19,26 @@
 @implementation HWMainTabViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+  [super viewDidLoad];
   _viewModel = [[HWMainTabBarViewModel alloc] init];
+  [self customTabBar];
   [self setupViewControllers];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)customTabBar{
+  self.tabBar.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"tab_background"]];
+//  [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
+//  [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
+  [UITabBarItem appearance].titlePositionAdjustment = UIOffsetMake(0, -2.0);
+  [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : SECONDARY_TEXT_COLOR,
+                                                      NSFontAttributeName : [UIFont systemFontOfSize:11]} forState:UIControlStateNormal];
+  [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : MAIN_VISUAL_COLOR,
+                                                      NSFontAttributeName : [UIFont systemFontOfSize:11]} forState:UIControlStateSelected];
 }
 
 - (void)setupViewControllers{

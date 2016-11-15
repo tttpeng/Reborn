@@ -6,8 +6,8 @@
 //  Copyright © 2016年 healthcare-works. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "HWBaseViewController.h"
 
-@interface HWCareViewController : UIViewController
+@interface HWCareViewController : HWBaseViewController
 
 @end

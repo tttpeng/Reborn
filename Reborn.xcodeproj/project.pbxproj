@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042B1C061DDAB5E900D610E5 /* HWMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B1C051DDAB5E800D610E5 /* HWMineViewController.m */; };
+		042B1C0A1DDAB8CC00D610E5 /* HWBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B1C091DDAB8CC00D610E5 /* HWBaseViewController.m */; };
+		042B1C0D1DDABE6D00D610E5 /* HWNavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B1C0C1DDABE6D00D610E5 /* HWNavigationBarButton.m */; };
+		042B1C101DDAD8AC00D610E5 /* HWBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B1C0F1DDAD8AC00D610E5 /* HWBaseTableViewController.m */; };
+		042B1C131DDAD8CE00D610E5 /* HWNewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B1C121DDAD8CE00D610E5 /* HWNewTableViewController.m */; };
+		042B1C171DDADAC500D610E5 /* UIColor+HW.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B1C161DDADAC500D610E5 /* UIColor+HW.m */; };
 		0447A3BF1DD96768001EAE32 /* HWObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A3BE1DD96768001EAE32 /* HWObject.m */; };
 		0447A3C31DD9715B001EAE32 /* HWWeiBoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A3C21DD9715B001EAE32 /* HWWeiBoObject.m */; };
 		0447A3C51DD97322001EAE32 /* weibo.json in Resources */ = {isa = PBXBuildFile; fileRef = 0447A3C41DD97241001EAE32 /* weibo.json */; };
@@ -40,6 +46,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		042B1C021DDAB36700D610E5 /* HWColorTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWColorTheme.h; sourceTree = "<group>"; };
+		042B1C031DDAB43F00D610E5 /* HW-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HW-prefix.pch"; sourceTree = "<group>"; };
+		042B1C041DDAB5E800D610E5 /* HWMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMineViewController.h; sourceTree = "<group>"; };
+		042B1C051DDAB5E800D610E5 /* HWMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMineViewController.m; sourceTree = "<group>"; };
+		042B1C081DDAB8CC00D610E5 /* HWBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWBaseViewController.h; sourceTree = "<group>"; };
+		042B1C091DDAB8CC00D610E5 /* HWBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWBaseViewController.m; sourceTree = "<group>"; };
+		042B1C0B1DDABE6D00D610E5 /* HWNavigationBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWNavigationBarButton.h; sourceTree = "<group>"; };
+		042B1C0C1DDABE6D00D610E5 /* HWNavigationBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWNavigationBarButton.m; sourceTree = "<group>"; };
+		042B1C0E1DDAD8AC00D610E5 /* HWBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWBaseTableViewController.h; sourceTree = "<group>"; };
+		042B1C0F1DDAD8AC00D610E5 /* HWBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWBaseTableViewController.m; sourceTree = "<group>"; };
+		042B1C111DDAD8CE00D610E5 /* HWNewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWNewTableViewController.h; sourceTree = "<group>"; };
+		042B1C121DDAD8CE00D610E5 /* HWNewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWNewTableViewController.m; sourceTree = "<group>"; };
+		042B1C151DDADAC500D610E5 /* UIColor+HW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HW.h"; sourceTree = "<group>"; };
+		042B1C161DDADAC500D610E5 /* UIColor+HW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HW.m"; sourceTree = "<group>"; };
+		042B1C181DDADCCA00D610E5 /* HWKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWKit.h; sourceTree = "<group>"; };
 		0447A3BD1DD96768001EAE32 /* HWObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWObject.h; sourceTree = "<group>"; };
 		0447A3BE1DD96768001EAE32 /* HWObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWObject.m; sourceTree = "<group>"; };
 		0447A3C11DD9715B001EAE32 /* HWWeiBoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HWWeiBoObject.h; path = ../HWWeiBoObject.h; sourceTree = "<group>"; };
@@ -113,6 +134,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042B1C071DDAB8C000D610E5 /* HWBaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				042B1C081DDAB8CC00D610E5 /* HWBaseViewController.h */,
+				042B1C091DDAB8CC00D610E5 /* HWBaseViewController.m */,
+				042B1C0E1DDAD8AC00D610E5 /* HWBaseTableViewController.h */,
+				042B1C0F1DDAD8AC00D610E5 /* HWBaseTableViewController.m */,
+				042B1C0B1DDABE6D00D610E5 /* HWNavigationBarButton.h */,
+				042B1C0C1DDABE6D00D610E5 /* HWNavigationBarButton.m */,
+			);
+			path = HWBaseClass;
+			sourceTree = "<group>";
+		};
+		042B1C141DDADAB000D610E5 /* HWKit */ = {
+			isa = PBXGroup;
+			children = (
+				042B1C151DDADAC500D610E5 /* UIColor+HW.h */,
+				042B1C161DDADAC500D610E5 /* UIColor+HW.m */,
+				042B1C181DDADCCA00D610E5 /* HWKit.h */,
+			);
+			path = HWKit;
+			sourceTree = "<group>";
+		};
 		0447A3BC1DD96730001EAE32 /* BaseObject */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +213,8 @@
 		044FDABD1DD46DED00FA9385 /* Reborn */ = {
 			isa = PBXGroup;
 			children = (
+				042B1C141DDADAB000D610E5 /* HWKit */,
+				042B1C071DDAB8C000D610E5 /* HWBaseClass */,
 				0447A3D11DD9D4A8001EAE32 /* HWBaseController */,
 				0447A3BC1DD96730001EAE32 /* BaseObject */,
 				044FDAD51DD46F1800FA9385 /* HWNetwork */,
@@ -178,6 +224,10 @@
 				0447A3DC1DD9E432001EAE32 /* HWHomeViewController.m */,
 				0447A3DE1DD9E801001EAE32 /* HWCareViewController.h */,
 				0447A3DF1DD9E801001EAE32 /* HWCareViewController.m */,
+				042B1C041DDAB5E800D610E5 /* HWMineViewController.h */,
+				042B1C051DDAB5E800D610E5 /* HWMineViewController.m */,
+				042B1C111DDAD8CE00D610E5 /* HWNewTableViewController.h */,
+				042B1C121DDAD8CE00D610E5 /* HWNewTableViewController.m */,
 				044FDAF81DD475A100FA9385 /* HWRequestTestApi.h */,
 				044FDAF91DD475A100FA9385 /* HWRequestTestApi.m */,
 				044FDAFE1DD5768E00FA9385 /* HWRequestAApi.h */,
@@ -203,6 +253,7 @@
 				044FDAC11DD46DED00FA9385 /* AppDelegate.h */,
 				044FDAC21DD46DED00FA9385 /* AppDelegate.m */,
 				044FDABF1DD46DED00FA9385 /* main.m */,
+				042B1C031DDAB43F00D610E5 /* HW-prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -210,6 +261,7 @@
 		044FDAD51DD46F1800FA9385 /* HWNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				042B1C021DDAB36700D610E5 /* HWColorTheme.h */,
 				044FDAD61DD46F1800FA9385 /* HWBaseRequest.h */,
 				044FDAD71DD46F1800FA9385 /* HWBaseRequest.m */,
 				044FDAD81DD46F1800FA9385 /* HWBatchRequest.h */,
@@ -384,14 +436,19 @@
 				044FDAEE1DD46F1800FA9385 /* HWNetworkAgent.m in Sources */,
 				044FDAC61DD46DED00FA9385 /* ViewController.m in Sources */,
 				044FDAFA1DD475A100FA9385 /* HWRequestTestApi.m in Sources */,
+				042B1C131DDAD8CE00D610E5 /* HWNewTableViewController.m in Sources */,
 				044FDAC31DD46DED00FA9385 /* AppDelegate.m in Sources */,
 				044FDAF11DD46F1800FA9385 /* HWRequest.m in Sources */,
 				044FDAF01DD46F1800FA9385 /* HWNetworkPrivate.m in Sources */,
 				0447A3D41DD9D4C7001EAE32 /* HWNavigationController.m in Sources */,
 				044FDAC01DD46DED00FA9385 /* main.m in Sources */,
+				042B1C0D1DDABE6D00D610E5 /* HWNavigationBarButton.m in Sources */,
+				042B1C0A1DDAB8CC00D610E5 /* HWBaseViewController.m in Sources */,
 				0447A3D71DD9D5F1001EAE32 /* HWMainTabViewController.m in Sources */,
 				044FDAEF1DD46F1800FA9385 /* HWNetworkConfig.m in Sources */,
 				044FDAED1DD46F1800FA9385 /* HWChainRequestAgent.m in Sources */,
+				042B1C101DDAD8AC00D610E5 /* HWBaseTableViewController.m in Sources */,
+				042B1C171DDADAC500D610E5 /* UIColor+HW.m in Sources */,
 				044FDB031DD5769900FA9385 /* HWRequestBApi.m in Sources */,
 				044FDAE91DD46F1800FA9385 /* HWBaseRequest.m in Sources */,
 				044FDAEC1DD46F1800FA9385 /* HWChainRequest.m in Sources */,
@@ -399,6 +456,7 @@
 				044FDB001DD5768E00FA9385 /* HWRequestAApi.m in Sources */,
 				044FDB061DD576A000FA9385 /* HWRequestCApi.m in Sources */,
 				0447A3BF1DD96768001EAE32 /* HWObject.m in Sources */,
+				042B1C061DDAB5E900D610E5 /* HWMineViewController.m in Sources */,
 				0447A3E01DD9E801001EAE32 /* HWCareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,6 +577,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = X342LX7QRW;
+				GCC_PREFIX_HEADER = "Reborn/HW-prefix.pch";
 				INFOPLIST_FILE = Reborn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tttpeng.Reborn;
@@ -534,6 +593,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				GCC_PREFIX_HEADER = "Reborn/HW-prefix.pch";
 				INFOPLIST_FILE = Reborn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tttpeng.Reborn;

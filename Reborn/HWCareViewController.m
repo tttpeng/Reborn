@@ -7,6 +7,7 @@
 //
 
 #import "HWCareViewController.h"
+#import "HWNewTableViewController.h"
 
 @interface HWCareViewController ()
 
@@ -15,11 +16,27 @@
 @implementation HWCareViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-  self.view.backgroundColor = [UIColor greenColor];
-  UIViewController *controller = [[UIViewController alloc] init];
-  [self.navigationController pushViewController:controller animated:YES];
+  [super viewDidLoad];
   
+  UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(100, 100, 100, 30)];
+  button.backgroundColor = MAIN_VISUAL_COLOR;
+  [button setTitle:@"Push" forState:UIControlStateNormal];
+  [self.view addSubview:button];
+  
+  [button addTarget:self action:@selector(push) forControlEvents:UIControlEventTouchUpInside];
+
+  [button mas_makeConstraints:^(MASConstraintMaker *make) {
+    make.centerX.equalTo(self.view);
+    make.top.equalTo(self.view).offset(200);
+  }];
+  
+  
+}
+
+- (void)push
+{
+  HWNewTableViewController *controller = [[HWNewTableViewController alloc] init];
+  [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

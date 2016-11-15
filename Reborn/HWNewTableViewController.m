@@ -17,9 +17,22 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.title = @"列表";
+  
 }
 
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+  return 0;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"123"];
+  cell.backgroundColor = [UIColor randomColor];
+  cell.textLabel.text = @"sad";
+  return cell;
+}
 
 
 

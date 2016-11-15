@@ -7,8 +7,9 @@
 //
 
 #import "HWBaseTableViewController.h"
+#import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
 
-@interface HWBaseTableViewController ()
+@interface HWBaseTableViewController ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
 @end
 
@@ -30,13 +31,15 @@
   _tableView.rowHeight = _cellHeight;
   _tableView.delegate = self;
   _tableView.dataSource = self;
+  _tableView.emptyDataSetSource = self;
+  _tableView.emptyDataSetDelegate = self;
+  _tableView.backgroundColor = [UIColor clearColor];
   
   if ([NSClassFromString(_cellIdentifier) isSubclassOfClass:[UITableViewCell class]]) {
     [_tableView registerClass:NSClassFromString(_cellIdentifier) forCellReuseIdentifier:_cellIdentifier];
   }
   
   [self.view addSubview:_tableView];
-  _tableView.backgroundColor = [UIColor redColor];
   
   [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
     make.left.equalTo(self.view.mas_left);
@@ -45,32 +48,61 @@
     make.bottom.mas_equalTo(0);
   }];}
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
-}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return 30;
+  return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"123"];
-  cell.backgroundColor = [UIColor randomColor];
-  cell.textLabel.text = @"sad";
   return cell;
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
+{
+  return [UIImage imageNamed:@"cure_selected"];
+}
+
+- (NSAttributedString *)titleForEmptyDataSet:(UIScrollView *)scrollView
+{
+  NSString *text = @"网络请求失败";
+  
+  NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:18.0f],
+                               NSForegroundColorAttributeName: [UIColor darkGrayColor]};
+  
+  return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+
+}
+
+- (NSAttributedString *)descriptionForEmptyDataSet:(UIScrollView *)scrollView
+{
+  NSString *text = @"请检查您的网络，重新加载吧";
+  
+  NSMutableParagraphStyle *paragraph = [NSMutableParagraphStyle new];
+  paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+  paragraph.alignment = NSTextAlignmentCenter;
+  
+  NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:14.0f],
+                               NSForegroundColorAttributeName: [UIColor lightGrayColor],
+                               NSParagraphStyleAttributeName: paragraph};
+  
+  return [[NSAttributedString alloc] initWithString:text attributes:attributes];
+}
+
+- (NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state
+{
+  NSDictionary *attributes = @{NSFontAttributeName: [UIFont boldSystemFontOfSize:14.0f]};
+  
+  return [[NSAttributedString alloc] initWithString:@"重新加载" attributes:attributes];
+}
+
+- (void)emptyDataSet:(UIScrollView *)scrollView didTapButton:(UIButton *)button
+{
+  [self emptyViewReladButtonDidTap];
+}
+
+- (void)emptyViewReladButtonDidTap {}
 
 @end

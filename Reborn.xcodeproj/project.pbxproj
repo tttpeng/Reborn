@@ -13,6 +13,7 @@
 		042B1C101DDAD8AC00D610E5 /* HWBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B1C0F1DDAD8AC00D610E5 /* HWBaseTableViewController.m */; };
 		042B1C131DDAD8CE00D610E5 /* HWNewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B1C121DDAD8CE00D610E5 /* HWNewTableViewController.m */; };
 		042B1C171DDADAC500D610E5 /* UIColor+HW.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B1C161DDADAC500D610E5 /* UIColor+HW.m */; };
+		042B1C1B1DDB0D0E00D610E5 /* HWHomeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042B1C1A1DDB0D0E00D610E5 /* HWHomeTableViewController.m */; };
 		0447A3BF1DD96768001EAE32 /* HWObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A3BE1DD96768001EAE32 /* HWObject.m */; };
 		0447A3C31DD9715B001EAE32 /* HWWeiBoObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0447A3C21DD9715B001EAE32 /* HWWeiBoObject.m */; };
 		0447A3C51DD97322001EAE32 /* weibo.json in Resources */ = {isa = PBXBuildFile; fileRef = 0447A3C41DD97241001EAE32 /* weibo.json */; };
@@ -61,6 +62,8 @@
 		042B1C151DDADAC500D610E5 /* UIColor+HW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HW.h"; sourceTree = "<group>"; };
 		042B1C161DDADAC500D610E5 /* UIColor+HW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HW.m"; sourceTree = "<group>"; };
 		042B1C181DDADCCA00D610E5 /* HWKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWKit.h; sourceTree = "<group>"; };
+		042B1C191DDB0D0E00D610E5 /* HWHomeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHomeTableViewController.h; sourceTree = "<group>"; };
+		042B1C1A1DDB0D0E00D610E5 /* HWHomeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHomeTableViewController.m; sourceTree = "<group>"; };
 		0447A3BD1DD96768001EAE32 /* HWObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWObject.h; sourceTree = "<group>"; };
 		0447A3BE1DD96768001EAE32 /* HWObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWObject.m; sourceTree = "<group>"; };
 		0447A3C11DD9715B001EAE32 /* HWWeiBoObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HWWeiBoObject.h; path = ../HWWeiBoObject.h; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 				042B1C051DDAB5E800D610E5 /* HWMineViewController.m */,
 				042B1C111DDAD8CE00D610E5 /* HWNewTableViewController.h */,
 				042B1C121DDAD8CE00D610E5 /* HWNewTableViewController.m */,
+				042B1C191DDB0D0E00D610E5 /* HWHomeTableViewController.h */,
+				042B1C1A1DDB0D0E00D610E5 /* HWHomeTableViewController.m */,
 				044FDAF81DD475A100FA9385 /* HWRequestTestApi.h */,
 				044FDAF91DD475A100FA9385 /* HWRequestTestApi.m */,
 				044FDAFE1DD5768E00FA9385 /* HWRequestAApi.h */,
@@ -432,6 +437,7 @@
 				044FDAEA1DD46F1800FA9385 /* HWBatchRequest.m in Sources */,
 				0447A3C81DD97542001EAE32 /* HWKeyValueStore.m in Sources */,
 				044FDB091DD576B100FA9385 /* HWRequestDApi.m in Sources */,
+				042B1C1B1DDB0D0E00D610E5 /* HWHomeTableViewController.m in Sources */,
 				0447A3DA1DD9D84F001EAE32 /* HWMainTabBarViewModel.m in Sources */,
 				044FDAEE1DD46F1800FA9385 /* HWNetworkAgent.m in Sources */,
 				044FDAC61DD46DED00FA9385 /* ViewController.m in Sources */,

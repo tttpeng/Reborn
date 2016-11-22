@@ -148,8 +148,8 @@
 		0486B7161DE45B79000A7671 /* HWHomeStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHomeStore.m; sourceTree = "<group>"; };
 		0486B7181DE45C76000A7671 /* HWHomeApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHomeApi.h; sourceTree = "<group>"; };
 		0486B7191DE45C76000A7671 /* HWHomeApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHomeApi.m; sourceTree = "<group>"; };
-		0486B71B1DE46283000A7671 /* HWHospital.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHospital.h; sourceTree = "<group>"; };
-		0486B71C1DE46283000A7671 /* HWHospital.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHospital.m; sourceTree = "<group>"; };
+		0486B71B1DE46283000A7671 /* HWHospital.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HWHospital.h; path = BaseObject/HWHospital.h; sourceTree = "<group>"; };
+		0486B71C1DE46283000A7671 /* HWHospital.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HWHospital.m; path = BaseObject/HWHospital.m; sourceTree = "<group>"; };
 		04FA3C371DE2DB9E00264A05 /* HWVersionGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWVersionGuideViewController.h; sourceTree = "<group>"; };
 		04FA3C381DE2DB9E00264A05 /* HWVersionGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWVersionGuideViewController.m; sourceTree = "<group>"; };
 		04FA3C3A1DE2DDA900264A05 /* AppDelegate+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ViewController.h"; sourceTree = "<group>"; };
@@ -216,8 +216,6 @@
 				0447A3BE1DD96768001EAE32 /* HWObject.m */,
 				0447A3C61DD97542001EAE32 /* HWKeyValueStore.h */,
 				0447A3C71DD97542001EAE32 /* HWKeyValueStore.m */,
-				0486B71B1DE46283000A7671 /* HWHospital.h */,
-				0486B71C1DE46283000A7671 /* HWHospital.m */,
 			);
 			path = BaseObject;
 			sourceTree = "<group>";
@@ -283,12 +281,7 @@
 				042B1C051DDAB5E800D610E5 /* HWMineViewController.m */,
 				042B1C111DDAD8CE00D610E5 /* HWNewTableViewController.h */,
 				042B1C121DDAD8CE00D610E5 /* HWNewTableViewController.m */,
-				042B1C191DDB0D0E00D610E5 /* HWHomeTableViewController.h */,
-				042B1C1A1DDB0D0E00D610E5 /* HWHomeTableViewController.m */,
-				0486B7181DE45C76000A7671 /* HWHomeApi.h */,
-				0486B7191DE45C76000A7671 /* HWHomeApi.m */,
-				0486B7151DE45B79000A7671 /* HWHomeStore.h */,
-				0486B7161DE45B79000A7671 /* HWHomeStore.m */,
+				0486B71E1DE4647C000A7671 /* Hospital */,
 				044FDAF81DD475A100FA9385 /* HWRequestTestApi.h */,
 				044FDAF91DD475A100FA9385 /* HWRequestTestApi.m */,
 				044FDAFE1DD5768E00FA9385 /* HWRequestAApi.h */,
@@ -349,6 +342,21 @@
 				044FDAE81DD46F1800FA9385 /* HWRequest.m */,
 			);
 			path = HWNetwork;
+			sourceTree = "<group>";
+		};
+		0486B71E1DE4647C000A7671 /* Hospital */ = {
+			isa = PBXGroup;
+			children = (
+				042B1C191DDB0D0E00D610E5 /* HWHomeTableViewController.h */,
+				042B1C1A1DDB0D0E00D610E5 /* HWHomeTableViewController.m */,
+				0486B7181DE45C76000A7671 /* HWHomeApi.h */,
+				0486B7191DE45C76000A7671 /* HWHomeApi.m */,
+				0486B7151DE45B79000A7671 /* HWHomeStore.h */,
+				0486B7161DE45B79000A7671 /* HWHomeStore.m */,
+				0486B71B1DE46283000A7671 /* HWHospital.h */,
+				0486B71C1DE46283000A7671 /* HWHospital.m */,
+			);
+			name = Hospital;
 			sourceTree = "<group>";
 		};
 		7C657746CCFF0883FCDC09A2 /* Frameworks */ = {

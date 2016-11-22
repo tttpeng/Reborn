@@ -5,4 +5,6 @@ target 'Reborn' do
   pod 'FMDB', '~> 2.6.2'
   pod 'Masonry', '~> 1.0.2'
   pod 'DZNEmptyDataSet', '~> 1.8.1'
+  pod 'UITableView+FDTemplateLayoutCell', '~> 1.5.beta'
+  pod 'EAIntroView', '~> 2.10.0'
 end

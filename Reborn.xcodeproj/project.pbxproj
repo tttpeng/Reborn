@@ -43,6 +43,19 @@
 		044FDB031DD5769900FA9385 /* HWRequestBApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 044FDB021DD5769900FA9385 /* HWRequestBApi.m */; };
 		044FDB061DD576A000FA9385 /* HWRequestCApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 044FDB051DD576A000FA9385 /* HWRequestCApi.m */; };
 		044FDB091DD576B100FA9385 /* HWRequestDApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 044FDB081DD576B100FA9385 /* HWRequestDApi.m */; };
+		04861BA21DDEF9DE002B6BC6 /* HWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04861BA11DDEF9DE002B6BC6 /* HWTableViewCell.m */; };
+		04861BA51DDEFA30002B6BC6 /* UIView+AddLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 04861BA41DDEFA30002B6BC6 /* UIView+AddLine.m */; };
+		04861BA91DDF082E002B6BC6 /* HWViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04861BA81DDF082E002B6BC6 /* HWViewModel.m */; };
+		04861BAC1DDF084E002B6BC6 /* HWListRequestViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04861BAB1DDF084E002B6BC6 /* HWListRequestViewModel.m */; };
+		0486B7141DE44EC2000A7671 /* HWStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7131DE44EC2000A7671 /* HWStore.m */; };
+		0486B7171DE45B79000A7671 /* HWHomeStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7161DE45B79000A7671 /* HWHomeStore.m */; };
+		0486B71A1DE45C76000A7671 /* HWHomeApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7191DE45C76000A7671 /* HWHomeApi.m */; };
+		0486B71D1DE46283000A7671 /* HWHospital.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B71C1DE46283000A7671 /* HWHospital.m */; };
+		04FA3C391DE2DB9E00264A05 /* HWVersionGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA3C381DE2DB9E00264A05 /* HWVersionGuideViewController.m */; };
+		04FA3C3C1DE2DDA900264A05 /* AppDelegate+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA3C3B1DE2DDA900264A05 /* AppDelegate+ViewController.m */; };
+		04FA3C401DE2E9E200264A05 /* 003.png in Resources */ = {isa = PBXBuildFile; fileRef = 04FA3C3D1DE2E9E200264A05 /* 003.png */; };
+		04FA3C411DE2E9E200264A05 /* 001.png in Resources */ = {isa = PBXBuildFile; fileRef = 04FA3C3E1DE2E9E200264A05 /* 001.png */; };
+		04FA3C421DE2E9E200264A05 /* 002.png in Resources */ = {isa = PBXBuildFile; fileRef = 04FA3C3F1DE2E9E200264A05 /* 002.png */; };
 		1D886B21BA8AC5A0ACC25BE6 /* libPods-Reborn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA71DBEA9BF2289591373393 /* libPods-Reborn.a */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +133,30 @@
 		044FDB051DD576A000FA9385 /* HWRequestCApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWRequestCApi.m; sourceTree = "<group>"; };
 		044FDB071DD576B100FA9385 /* HWRequestDApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWRequestDApi.h; sourceTree = "<group>"; };
 		044FDB081DD576B100FA9385 /* HWRequestDApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWRequestDApi.m; sourceTree = "<group>"; };
+		04861BA01DDEF9DE002B6BC6 /* HWTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWTableViewCell.h; sourceTree = "<group>"; };
+		04861BA11DDEF9DE002B6BC6 /* HWTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWTableViewCell.m; sourceTree = "<group>"; };
+		04861BA31DDEFA30002B6BC6 /* UIView+AddLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AddLine.h"; sourceTree = "<group>"; };
+		04861BA41DDEFA30002B6BC6 /* UIView+AddLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AddLine.m"; sourceTree = "<group>"; };
+		04861BA61DDEFA49002B6BC6 /* HWConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWConstant.h; sourceTree = "<group>"; };
+		04861BA71DDF082E002B6BC6 /* HWViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWViewModel.h; sourceTree = "<group>"; };
+		04861BA81DDF082E002B6BC6 /* HWViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWViewModel.m; sourceTree = "<group>"; };
+		04861BAA1DDF084E002B6BC6 /* HWListRequestViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWListRequestViewModel.h; sourceTree = "<group>"; };
+		04861BAB1DDF084E002B6BC6 /* HWListRequestViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWListRequestViewModel.m; sourceTree = "<group>"; };
+		0486B7121DE44EC2000A7671 /* HWStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWStore.h; sourceTree = "<group>"; };
+		0486B7131DE44EC2000A7671 /* HWStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWStore.m; sourceTree = "<group>"; };
+		0486B7151DE45B79000A7671 /* HWHomeStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHomeStore.h; sourceTree = "<group>"; };
+		0486B7161DE45B79000A7671 /* HWHomeStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHomeStore.m; sourceTree = "<group>"; };
+		0486B7181DE45C76000A7671 /* HWHomeApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHomeApi.h; sourceTree = "<group>"; };
+		0486B7191DE45C76000A7671 /* HWHomeApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHomeApi.m; sourceTree = "<group>"; };
+		0486B71B1DE46283000A7671 /* HWHospital.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHospital.h; sourceTree = "<group>"; };
+		0486B71C1DE46283000A7671 /* HWHospital.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHospital.m; sourceTree = "<group>"; };
+		04FA3C371DE2DB9E00264A05 /* HWVersionGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWVersionGuideViewController.h; sourceTree = "<group>"; };
+		04FA3C381DE2DB9E00264A05 /* HWVersionGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWVersionGuideViewController.m; sourceTree = "<group>"; };
+		04FA3C3A1DE2DDA900264A05 /* AppDelegate+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ViewController.h"; sourceTree = "<group>"; };
+		04FA3C3B1DE2DDA900264A05 /* AppDelegate+ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+ViewController.m"; sourceTree = "<group>"; };
+		04FA3C3D1DE2E9E200264A05 /* 003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 003.png; sourceTree = "<group>"; };
+		04FA3C3E1DE2E9E200264A05 /* 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 001.png; sourceTree = "<group>"; };
+		04FA3C3F1DE2E9E200264A05 /* 002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 002.png; sourceTree = "<group>"; };
 		6A837AB1404FA8ACF56512FE /* Pods-Reborn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reborn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Reborn/Pods-Reborn.debug.xcconfig"; sourceTree = "<group>"; };
 		EA71DBEA9BF2289591373393 /* libPods-Reborn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Reborn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA8030FBF595B68F9203427A /* Pods-Reborn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reborn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reborn/Pods-Reborn.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +183,14 @@
 				042B1C0F1DDAD8AC00D610E5 /* HWBaseTableViewController.m */,
 				042B1C0B1DDABE6D00D610E5 /* HWNavigationBarButton.h */,
 				042B1C0C1DDABE6D00D610E5 /* HWNavigationBarButton.m */,
+				04861BA01DDEF9DE002B6BC6 /* HWTableViewCell.h */,
+				04861BA11DDEF9DE002B6BC6 /* HWTableViewCell.m */,
+				04861BA71DDF082E002B6BC6 /* HWViewModel.h */,
+				04861BA81DDF082E002B6BC6 /* HWViewModel.m */,
+				04861BAA1DDF084E002B6BC6 /* HWListRequestViewModel.h */,
+				04861BAB1DDF084E002B6BC6 /* HWListRequestViewModel.m */,
+				0486B7121DE44EC2000A7671 /* HWStore.h */,
+				0486B7131DE44EC2000A7671 /* HWStore.m */,
 			);
 			path = HWBaseClass;
 			sourceTree = "<group>";
@@ -153,6 +198,9 @@
 		042B1C141DDADAB000D610E5 /* HWKit */ = {
 			isa = PBXGroup;
 			children = (
+				04861BA61DDEFA49002B6BC6 /* HWConstant.h */,
+				04861BA31DDEFA30002B6BC6 /* UIView+AddLine.h */,
+				04861BA41DDEFA30002B6BC6 /* UIView+AddLine.m */,
 				042B1C151DDADAC500D610E5 /* UIColor+HW.h */,
 				042B1C161DDADAC500D610E5 /* UIColor+HW.m */,
 				042B1C181DDADCCA00D610E5 /* HWKit.h */,
@@ -168,6 +216,8 @@
 				0447A3BE1DD96768001EAE32 /* HWObject.m */,
 				0447A3C61DD97542001EAE32 /* HWKeyValueStore.h */,
 				0447A3C71DD97542001EAE32 /* HWKeyValueStore.m */,
+				0486B71B1DE46283000A7671 /* HWHospital.h */,
+				0486B71C1DE46283000A7671 /* HWHospital.m */,
 			);
 			path = BaseObject;
 			sourceTree = "<group>";
@@ -216,6 +266,8 @@
 		044FDABD1DD46DED00FA9385 /* Reborn */ = {
 			isa = PBXGroup;
 			children = (
+				04FA3C371DE2DB9E00264A05 /* HWVersionGuideViewController.h */,
+				04FA3C381DE2DB9E00264A05 /* HWVersionGuideViewController.m */,
 				042B1C141DDADAB000D610E5 /* HWKit */,
 				042B1C071DDAB8C000D610E5 /* HWBaseClass */,
 				0447A3D11DD9D4A8001EAE32 /* HWBaseController */,
@@ -233,6 +285,10 @@
 				042B1C121DDAD8CE00D610E5 /* HWNewTableViewController.m */,
 				042B1C191DDB0D0E00D610E5 /* HWHomeTableViewController.h */,
 				042B1C1A1DDB0D0E00D610E5 /* HWHomeTableViewController.m */,
+				0486B7181DE45C76000A7671 /* HWHomeApi.h */,
+				0486B7191DE45C76000A7671 /* HWHomeApi.m */,
+				0486B7151DE45B79000A7671 /* HWHomeStore.h */,
+				0486B7161DE45B79000A7671 /* HWHomeStore.m */,
 				044FDAF81DD475A100FA9385 /* HWRequestTestApi.h */,
 				044FDAF91DD475A100FA9385 /* HWRequestTestApi.m */,
 				044FDAFE1DD5768E00FA9385 /* HWRequestAApi.h */,
@@ -251,12 +307,17 @@
 		044FDABE1DD46DED00FA9385 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				04FA3C3D1DE2E9E200264A05 /* 003.png */,
+				04FA3C3E1DE2E9E200264A05 /* 001.png */,
+				04FA3C3F1DE2E9E200264A05 /* 002.png */,
 				044FDAC71DD46DED00FA9385 /* Main.storyboard */,
 				044FDACA1DD46DED00FA9385 /* Assets.xcassets */,
 				044FDACC1DD46DED00FA9385 /* LaunchScreen.storyboard */,
 				044FDACF1DD46DED00FA9385 /* Info.plist */,
 				044FDAC11DD46DED00FA9385 /* AppDelegate.h */,
 				044FDAC21DD46DED00FA9385 /* AppDelegate.m */,
+				04FA3C3A1DE2DDA900264A05 /* AppDelegate+ViewController.h */,
+				04FA3C3B1DE2DDA900264A05 /* AppDelegate+ViewController.m */,
 				044FDABF1DD46DED00FA9385 /* main.m */,
 				042B1C031DDAB43F00D610E5 /* HW-prefix.pch */,
 			);
@@ -372,6 +433,9 @@
 			files = (
 				0447A3C51DD97322001EAE32 /* weibo.json in Resources */,
 				044FDACE1DD46DED00FA9385 /* LaunchScreen.storyboard in Resources */,
+				04FA3C421DE2E9E200264A05 /* 002.png in Resources */,
+				04FA3C401DE2E9E200264A05 /* 003.png in Resources */,
+				04FA3C411DE2E9E200264A05 /* 001.png in Resources */,
 				044FDACB1DD46DED00FA9385 /* Assets.xcassets in Resources */,
 				044FDAC91DD46DED00FA9385 /* Main.storyboard in Resources */,
 			);
@@ -432,23 +496,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04861BA91DDF082E002B6BC6 /* HWViewModel.m in Sources */,
 				0447A3DD1DD9E432001EAE32 /* HWHomeViewController.m in Sources */,
 				0447A3C31DD9715B001EAE32 /* HWWeiBoObject.m in Sources */,
+				0486B7141DE44EC2000A7671 /* HWStore.m in Sources */,
+				0486B71D1DE46283000A7671 /* HWHospital.m in Sources */,
 				044FDAEA1DD46F1800FA9385 /* HWBatchRequest.m in Sources */,
 				0447A3C81DD97542001EAE32 /* HWKeyValueStore.m in Sources */,
 				044FDB091DD576B100FA9385 /* HWRequestDApi.m in Sources */,
 				042B1C1B1DDB0D0E00D610E5 /* HWHomeTableViewController.m in Sources */,
+				04861BA51DDEFA30002B6BC6 /* UIView+AddLine.m in Sources */,
 				0447A3DA1DD9D84F001EAE32 /* HWMainTabBarViewModel.m in Sources */,
 				044FDAEE1DD46F1800FA9385 /* HWNetworkAgent.m in Sources */,
+				04861BA21DDEF9DE002B6BC6 /* HWTableViewCell.m in Sources */,
 				044FDAC61DD46DED00FA9385 /* ViewController.m in Sources */,
 				044FDAFA1DD475A100FA9385 /* HWRequestTestApi.m in Sources */,
+				04FA3C3C1DE2DDA900264A05 /* AppDelegate+ViewController.m in Sources */,
 				042B1C131DDAD8CE00D610E5 /* HWNewTableViewController.m in Sources */,
 				044FDAC31DD46DED00FA9385 /* AppDelegate.m in Sources */,
 				044FDAF11DD46F1800FA9385 /* HWRequest.m in Sources */,
 				044FDAF01DD46F1800FA9385 /* HWNetworkPrivate.m in Sources */,
 				0447A3D41DD9D4C7001EAE32 /* HWNavigationController.m in Sources */,
 				044FDAC01DD46DED00FA9385 /* main.m in Sources */,
+				0486B7171DE45B79000A7671 /* HWHomeStore.m in Sources */,
 				042B1C0D1DDABE6D00D610E5 /* HWNavigationBarButton.m in Sources */,
+				04861BAC1DDF084E002B6BC6 /* HWListRequestViewModel.m in Sources */,
 				042B1C0A1DDAB8CC00D610E5 /* HWBaseViewController.m in Sources */,
 				0447A3D71DD9D5F1001EAE32 /* HWMainTabViewController.m in Sources */,
 				044FDAEF1DD46F1800FA9385 /* HWNetworkConfig.m in Sources */,
@@ -456,9 +528,11 @@
 				042B1C101DDAD8AC00D610E5 /* HWBaseTableViewController.m in Sources */,
 				042B1C171DDADAC500D610E5 /* UIColor+HW.m in Sources */,
 				044FDB031DD5769900FA9385 /* HWRequestBApi.m in Sources */,
+				04FA3C391DE2DB9E00264A05 /* HWVersionGuideViewController.m in Sources */,
 				044FDAE91DD46F1800FA9385 /* HWBaseRequest.m in Sources */,
 				044FDAEC1DD46F1800FA9385 /* HWChainRequest.m in Sources */,
 				044FDAEB1DD46F1800FA9385 /* HWBatchRequestAgent.m in Sources */,
+				0486B71A1DE45C76000A7671 /* HWHomeApi.m in Sources */,
 				044FDB001DD5768E00FA9385 /* HWRequestAApi.m in Sources */,
 				044FDB061DD576A000FA9385 /* HWRequestCApi.m in Sources */,
 				0447A3BF1DD96768001EAE32 /* HWObject.m in Sources */,

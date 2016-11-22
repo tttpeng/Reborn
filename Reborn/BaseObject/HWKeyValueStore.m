@@ -37,7 +37,7 @@
 
 @end
 
-@implementation HWKeyValueStore\
+@implementation HWKeyValueStore
 
 static NSString *const DEFAULT_DB_NAME = @"database.sqlite";
 

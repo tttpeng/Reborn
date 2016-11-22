@@ -10,12 +10,16 @@
 
 @interface HWBaseTableViewController : HWBaseViewController<UITableViewDelegate,UITableViewDataSource>
 
+@property (nonatomic, assign) CGFloat          cellHeight;
+@property (nonatomic, assign) NSString         *cellIdentifier;
+@property (nonatomic, strong) UITableView      *tableView;
 @property (nonatomic, assign) UITableViewStyle tableStyle;
-@property (nonatomic, assign) CGFloat cellHeight;
-@property (nonatomic, assign) NSString *cellIdentifier;
-@property (nonatomic, strong) UITableView *tableView;
 
 
 - (void)emptyViewReladButtonDidTap;
+
+
+- (void)configDataForCell:(id)cell atIndexPath:(NSIndexPath *)indexPath;
+
 
 @end

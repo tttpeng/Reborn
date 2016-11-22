@@ -17,6 +17,7 @@
 #import "HWKeyValueStore.h"
 
 @interface ViewController ()
+<HWRequestDelegate>
 
 @end
 
@@ -66,7 +67,13 @@
   HWRequestCApi *testApi3 = [[HWRequestCApi alloc] init];
   HWRequestDApi *testApi4 = [[HWRequestDApi alloc] init];
 
-
+  [testApi startWithCompletionBlockWithSuccess:^(__kindof HWBaseRequest * _Nonnull request) {
+    
+  } failure:^(__kindof HWBaseRequest * _Nonnull request) {
+    
+  }];
+  
+  testApi.delegate = self;
   
   HWBatchRequest *batchRequest = [[HWBatchRequest alloc] initWithRequestArray:@[testApi,testApi1,testApi2,testApi3,testApi4]];
   [batchRequest startWithCompletionBlockWithSuccess:^(HWBatchRequest * _Nonnull batchRequest) {
@@ -85,6 +92,16 @@
 
 }
 
+
+- (void)requestFinished:(__kindof HWBaseRequest *)request
+{
+  
+}
+
+- (void)requestFailed:(__kindof HWBaseRequest *)request
+{
+  
+}
 
 - (void)didReceiveMemoryWarning {
   [super didReceiveMemoryWarning];

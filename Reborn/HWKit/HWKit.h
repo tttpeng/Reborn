@@ -10,5 +10,5 @@
 #define HWKit_h
 
 #import "UIColor+HW.h"
-
+#import "HWConstant.h"
 #endif /* HWKit_h */

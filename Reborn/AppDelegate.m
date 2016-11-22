@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HWNetworkConfig.h"
-#import "HWMainTabViewController.h"
+#import "AppDelegate+ViewController.h"
 
 @interface AppDelegate ()
 
@@ -27,17 +27,16 @@
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
 
-  [self showHomeView];
+//  [self showHomeView];
   
+  [self setRootView];
   [self.window makeKeyAndVisible];
   return YES;
 }
 
-
-- (void)showHomeView
++ (instancetype)shareInstance
 {
-  HWMainTabViewController *main = [[HWMainTabViewController alloc] init];
-  self.window.rootViewController = main;
+  return (AppDelegate *)[UIApplication sharedApplication].delegate;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

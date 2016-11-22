@@ -37,7 +37,8 @@
 
 - (void)initController
 {
-  
+  self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+
 }
 
 
@@ -53,7 +54,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
   [super viewDidAppear:animated];
-  // 如果栈内的层级多于一个，隐藏UITabBar
+// 如果栈内的层级多于一个，隐藏UITabBar
   if (self.navigationController.childViewControllers.count >= 1){
     [self setHidesBottomBarWhenPushed:YES];
   }
@@ -92,6 +93,7 @@
   [backButton addTarget:self action:@selector(backAction:) forControlEvents:UIControlEventTouchUpInside];
   UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
   self.navigationItem.leftBarButtonItem = backButtonItem;
+
 }
 
 - (void)hideLeftButtonForRootController {

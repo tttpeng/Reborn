@@ -8,6 +8,7 @@
 
 #import "HWBaseTableViewController.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
+#import <UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
 
 @interface HWBaseTableViewController ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
@@ -46,8 +47,10 @@
     make.right.equalTo(self.view.mas_right);
     make.top.mas_equalTo(64);
     make.bottom.mas_equalTo(0);
-  }];}
+  }];
+}
 
+#pragma mark - 数据源
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -57,8 +60,33 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
   UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"123"];
+  [self configDataForCell:cell atIndexPath:indexPath];
   return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+  if (tableView.rowHeight > 0) {
+    return tableView.rowHeight;
+  }else{
+    __weak __typeof(self)weakSelf = self;
+    NSAssert(_cellIdentifier.length > 0, @"HWBaseTableViewController 中的tableView:heightForRowAtIndexPath 方法想使用 _cellIdentifier, 然而 _cellIdentifier 为空");
+    CGFloat height = [tableView fd_heightForCellWithIdentifier:_cellIdentifier
+                                              cacheByIndexPath:indexPath
+                                                 configuration:^(UITableViewCell *cell) {
+      [weakSelf configDataForCell:cell atIndexPath:indexPath];
+    }];
+    
+    return height;
+  }
+}
+
+- (void)configDataForCell:(id)cell atIndexPath:(NSIndexPath *)indexPath
+{
+  
+}
+
+#pragma mark - 空白占位图
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
 {

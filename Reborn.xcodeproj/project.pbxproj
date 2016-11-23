@@ -51,6 +51,9 @@
 		0486B7171DE45B79000A7671 /* HWHomeStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7161DE45B79000A7671 /* HWHomeStore.m */; };
 		0486B71A1DE45C76000A7671 /* HWHomeApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7191DE45C76000A7671 /* HWHomeApi.m */; };
 		0486B71D1DE46283000A7671 /* HWHospital.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B71C1DE46283000A7671 /* HWHospital.m */; };
+		0486B7211DE53A2E000A7671 /* HWHospitalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7201DE53A2E000A7671 /* HWHospitalCell.m */; };
+		0486B7241DE53FA8000A7671 /* HWHospitalViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7231DE53FA8000A7671 /* HWHospitalViewModel.m */; };
+		0486B7271DE58429000A7671 /* HWHomeStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7261DE58429000A7671 /* HWHomeStoreManager.m */; };
 		04FA3C391DE2DB9E00264A05 /* HWVersionGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA3C381DE2DB9E00264A05 /* HWVersionGuideViewController.m */; };
 		04FA3C3C1DE2DDA900264A05 /* AppDelegate+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA3C3B1DE2DDA900264A05 /* AppDelegate+ViewController.m */; };
 		04FA3C401DE2E9E200264A05 /* 003.png in Resources */ = {isa = PBXBuildFile; fileRef = 04FA3C3D1DE2E9E200264A05 /* 003.png */; };
@@ -150,6 +153,12 @@
 		0486B7191DE45C76000A7671 /* HWHomeApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHomeApi.m; sourceTree = "<group>"; };
 		0486B71B1DE46283000A7671 /* HWHospital.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HWHospital.h; path = BaseObject/HWHospital.h; sourceTree = "<group>"; };
 		0486B71C1DE46283000A7671 /* HWHospital.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HWHospital.m; path = BaseObject/HWHospital.m; sourceTree = "<group>"; };
+		0486B71F1DE53A2E000A7671 /* HWHospitalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHospitalCell.h; sourceTree = "<group>"; };
+		0486B7201DE53A2E000A7671 /* HWHospitalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHospitalCell.m; sourceTree = "<group>"; };
+		0486B7221DE53FA8000A7671 /* HWHospitalViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHospitalViewModel.h; sourceTree = "<group>"; };
+		0486B7231DE53FA8000A7671 /* HWHospitalViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHospitalViewModel.m; sourceTree = "<group>"; };
+		0486B7251DE58429000A7671 /* HWHomeStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHomeStoreManager.h; sourceTree = "<group>"; };
+		0486B7261DE58429000A7671 /* HWHomeStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHomeStoreManager.m; sourceTree = "<group>"; };
 		04FA3C371DE2DB9E00264A05 /* HWVersionGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWVersionGuideViewController.h; sourceTree = "<group>"; };
 		04FA3C381DE2DB9E00264A05 /* HWVersionGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWVersionGuideViewController.m; sourceTree = "<group>"; };
 		04FA3C3A1DE2DDA900264A05 /* AppDelegate+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ViewController.h"; sourceTree = "<group>"; };
@@ -351,10 +360,16 @@
 				042B1C1A1DDB0D0E00D610E5 /* HWHomeTableViewController.m */,
 				0486B7181DE45C76000A7671 /* HWHomeApi.h */,
 				0486B7191DE45C76000A7671 /* HWHomeApi.m */,
+				0486B7251DE58429000A7671 /* HWHomeStoreManager.h */,
+				0486B7261DE58429000A7671 /* HWHomeStoreManager.m */,
 				0486B7151DE45B79000A7671 /* HWHomeStore.h */,
 				0486B7161DE45B79000A7671 /* HWHomeStore.m */,
 				0486B71B1DE46283000A7671 /* HWHospital.h */,
 				0486B71C1DE46283000A7671 /* HWHospital.m */,
+				0486B7221DE53FA8000A7671 /* HWHospitalViewModel.h */,
+				0486B7231DE53FA8000A7671 /* HWHospitalViewModel.m */,
+				0486B71F1DE53A2E000A7671 /* HWHospitalCell.h */,
+				0486B7201DE53A2E000A7671 /* HWHospitalCell.m */,
 			);
 			name = Hospital;
 			sourceTree = "<group>";
@@ -505,9 +520,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				04861BA91DDF082E002B6BC6 /* HWViewModel.m in Sources */,
+				0486B7211DE53A2E000A7671 /* HWHospitalCell.m in Sources */,
 				0447A3DD1DD9E432001EAE32 /* HWHomeViewController.m in Sources */,
+				0486B7241DE53FA8000A7671 /* HWHospitalViewModel.m in Sources */,
 				0447A3C31DD9715B001EAE32 /* HWWeiBoObject.m in Sources */,
 				0486B7141DE44EC2000A7671 /* HWStore.m in Sources */,
+				0486B7271DE58429000A7671 /* HWHomeStoreManager.m in Sources */,
 				0486B71D1DE46283000A7671 /* HWHospital.m in Sources */,
 				044FDAEA1DD46F1800FA9385 /* HWBatchRequest.m in Sources */,
 				0447A3C81DD97542001EAE32 /* HWKeyValueStore.m in Sources */,

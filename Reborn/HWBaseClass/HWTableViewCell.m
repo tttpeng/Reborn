@@ -33,8 +33,8 @@
 
 - (void)setup
 {
-  self.bounds = [UIScreen mainScreen].bounds;
-  self.contentView.bounds = [UIScreen mainScreen].bounds;
+//  self.bounds = [UIScreen mainScreen].bounds;
+//  self.contentView.bounds = [UIScreen mainScreen].bounds;
   self.selectionStyle = UITableViewCellSelectionStyleNone;
   self.accessoryType = UITableViewCellAccessoryNone;
   _bottomLine = [self.contentView addBottomLine];
@@ -47,7 +47,7 @@
   [super prepareForReuse];
   
   //修复 cell 复用时，layout 的 subview 超出 contentView 时候的约束警告。
-  self.contentView.bounds = [UIScreen mainScreen].bounds;
+//  self.contentView.bounds = [UIScreen mainScreen].bounds;
 }
 
 

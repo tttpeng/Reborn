@@ -19,7 +19,6 @@
 - (void)initController
 {
   [super initController];
-  _cellHeight = 44;  
 }
 
 
@@ -59,7 +58,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-  UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"123"];
+  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier];
   [self configDataForCell:cell atIndexPath:indexPath];
   return cell;
 }

@@ -9,6 +9,7 @@
 #import "HWHomeStore.h"
 #import "HWHomeApi.h"
 #import "HWHospital.h"
+#import "HWHospitalViewModel.h"
 
 @interface HWHomeStore ()
 
@@ -18,6 +19,11 @@
 
 @implementation HWHomeStore
 
+-(void)fetchDataWithViewModel:(id)viewModel
+{
+  
+}
+
 - (void)requestSubjectDataWithCallback:(void(^)())completion
 {
   [self.api startWithCompletionBlockWithSuccess:^(__kindof HWBaseRequest * _Nonnull request) {
@@ -25,6 +31,13 @@
     NSLog(@"%@",request.responseObject);
     NSLog(@"%@",request.responseJSONObject);
     _hospitals = [HWHospital arrayOfModelsFromDictionaries:request.responseJSONObject[@"data"][@"sourceItems"]];
+    
+    NSMutableArray *array = [NSMutableArray array];
+    for (HWHospital *hospital in self.hospitals) {
+      HWHospitalViewModel *viewModel = [[HWHospitalViewModel alloc] initWithHospital:hospital];
+      [array addObject:viewModel];
+    }
+    _hospitalViewModels = array;
     NSLog(@"%@",_hospitals);
     completion();
     

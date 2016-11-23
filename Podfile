@@ -7,4 +7,5 @@ target 'Reborn' do
   pod 'DZNEmptyDataSet', '~> 1.8.1'
   pod 'UITableView+FDTemplateLayoutCell', '~> 1.5.beta'
   pod 'EAIntroView', '~> 2.10.0'
+  pod 'SDWebImage', '~> 4.0.0-beta2'
 end

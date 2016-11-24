@@ -19,7 +19,7 @@
 - (void)requestSubjectDataWithCallback:(void(^)())completion;
 - (void)fetchDataWithViewModel:(id)viewModel;
 
-- (void)loadData;
-- (void)loadNextPage;
+//- (void)loadData;
+//- (void)loadNextPage;
 
 @end

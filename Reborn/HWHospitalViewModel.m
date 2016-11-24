@@ -10,22 +10,15 @@
 
 @implementation HWHospitalViewModel
 
-- (instancetype)initWithHospital:(HWHospital *)hospital
-{
-  self = [super init];
-  if (self) {
-    self.pictureURL = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://zhongmeban-picture-bucket.oss-cn-beijing.aliyuncs.com%@",hospital.picture]];
-    self.hospitalName = hospital.hospitalName;
-    self.addressName = hospital.address;
-  }
-  return self;
-}
-
 
 
 + (instancetype)viewModelWith:(HWHospital *)hospital
 {
-  
+  HWHospitalViewModel *viewModel = [[HWHospitalViewModel alloc] init];
+  viewModel.pictureURL = [[NSURL alloc] initWithString:[NSString stringWithFormat:@"http://zhongmeban-picture-bucket.oss-cn-beijing.aliyuncs.com%@",hospital.picture]];
+  viewModel.hospitalName = hospital.hospitalName;
+  viewModel.addressName = hospital.address;
+  return viewModel;
 }
 
 

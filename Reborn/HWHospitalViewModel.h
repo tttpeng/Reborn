@@ -15,7 +15,8 @@
 @property (nonatomic, copy) NSString *hospitalName;
 @property (nonatomic, copy) NSString *addressName;
 
-- (instancetype)initWithHospital:(HWHospital *)hospital;
+
 + (instancetype)viewModelWith:(HWHospital *)hospital;
+
 
 @end

@@ -34,7 +34,7 @@
     
     NSMutableArray *array = [NSMutableArray array];
     for (HWHospital *hospital in self.hospitals) {
-      HWHospitalViewModel *viewModel = [[HWHospitalViewModel alloc] initWithHospital:hospital];
+      HWHospitalViewModel *viewModel = [HWHospitalViewModel viewModelWith:hospital];
       [array addObject:viewModel];
     }
     _hospitalViewModels = array;
@@ -47,6 +47,7 @@
     
   }];
 }
+
 
 
 - (HWHomeApi *)api

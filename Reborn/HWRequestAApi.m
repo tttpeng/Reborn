@@ -30,4 +30,26 @@
 }
 
 
+- (void)loadData
+{
+  [self start];
+  [self startWithCompletionBlockWithSuccess:^(__kindof HWBaseRequest * _Nonnull request) {
+    
+  } failure:^(__kindof HWBaseRequest * _Nonnull request) {
+    
+  }];
+}
+
+
+- (void)requestFinished:(__kindof HWBaseRequest *)request
+{
+  
+}
+
+- (void)requestFailed:(__kindof HWBaseRequest *)request
+{
+  
+}
+
+
 @end

@@ -27,9 +27,6 @@
 - (void)requestSubjectDataWithCallback:(void(^)())completion
 {
   [self.api startWithCompletionBlockWithSuccess:^(__kindof HWBaseRequest * _Nonnull request) {
-    NSLog(@"%@",request.responseString);
-    NSLog(@"%@",request.responseObject);
-    NSLog(@"%@",request.responseJSONObject);
     _hospitals = [HWHospital arrayOfModelsFromDictionaries:request.responseJSONObject[@"data"][@"sourceItems"]];
     
     NSMutableArray *array = [NSMutableArray array];
@@ -38,7 +35,6 @@
       [array addObject:viewModel];
     }
     _hospitalViewModels = array;
-    NSLog(@"%@",_hospitals);
     completion();
     
   } failure:^(__kindof HWBaseRequest * _Nonnull request) {

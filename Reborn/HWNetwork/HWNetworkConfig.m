@@ -16,7 +16,7 @@
 #endif
 
 @implementation HWNetworkConfig {
-    NSMutableArray<id<HWUrlFilterProtocol>> *_urlFilters;
+    NSMutableArray<id<HWNetworkFilterProtocol>> *_urlFilters;
     NSMutableArray<id<HWCacheDirPathFilterProtocol>> *_cacheDirPathFilters;
 }
 
@@ -42,7 +42,7 @@
     return self;
 }
 
-- (void)addUrlFilter:(id<HWUrlFilterProtocol>)filter {
+- (void)addUrlFilter:(id<HWNetworkFilterProtocol>)filter {
     [_urlFilters addObject:filter];
 }
 
@@ -58,7 +58,7 @@
     [_cacheDirPathFilters removeAllObjects];
 }
 
-- (NSArray<id<HWUrlFilterProtocol>> *)urlFilters {
+- (NSArray<id<HWNetworkFilterProtocol>> *)urlFilters {
     return [_urlFilters copy];
 }
 

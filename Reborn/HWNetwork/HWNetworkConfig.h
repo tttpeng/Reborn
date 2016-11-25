@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class AFSecurityPolicy;
 
 ///  HWUrlFilterProtocol can be used to append common parameters to requests before sending them.
-@protocol HWUrlFilterProtocol <NSObject>
+@protocol HWNetworkFilterProtocol <NSObject>
 ///  Preprocess request URL before actually sending them.
 ///
 ///  @param originUrl request's origin URL, which is returned by `requestUrl`
@@ -22,6 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 ///
 ///  @return A new url which will be used as a new `requestUrl`
 - (NSString *)filterUrl:(NSString *)originUrl withRequest:(HWBaseRequest *)request;
+
+- (NSDictionary *)commonRequestHeadersWithRequest:(HWBaseRequest *)request;
+
+- (NSData *)beforePerformCompleteWithRequest:(HWBaseRequest *)reqeust;
+
 @end
 
 ///  HWCacheDirPathFilterProtocol can be used to append common path components when caching response results
@@ -50,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
 ///  Request CDN URL. Default is empty string.
 @property (nonatomic, strong) NSString *cdnUrl;
 ///  URL filters. See also `HWUrlFilterProtocol`.
-@property (nonatomic, strong, readonly) NSArray<id<HWUrlFilterProtocol>> *urlFilters;
+@property (nonatomic, strong, readonly) NSArray<id<HWNetworkFilterProtocol>> *urlFilters;
 ///  Cache path filters. See also `HWCacheDirPathFilterProtocol`.
 @property (nonatomic, strong, readonly) NSArray<id<HWCacheDirPathFilterProtocol>> *cacheDirPathFilters;
 ///  Security policy will be used by AFNetworking. See also `AFSecurityPolicy`.
@@ -61,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSURLSessionConfiguration* sessionConfiguration;
 
 ///  Add a new URL filter.
-- (void)addUrlFilter:(id<HWUrlFilterProtocol>)filter;
+- (void)addUrlFilter:(id<HWNetworkFilterProtocol>)filter;
 ///  Remove all URL filters.
 - (void)clearUrlFilter;
 ///  Add a new cache path filter

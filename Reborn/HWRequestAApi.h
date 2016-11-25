@@ -8,6 +8,7 @@
 
 #import "HWRequest.h"
 
-@interface HWRequestAApi : HWRequest
+@interface HWRequestAApi : HWRequest<HWRequestDelegate>
+
 
 @end

@@ -8,6 +8,13 @@
 
 #import "HWHomeApi.h"
 
+@interface HWHomeApi ()
+
+@property (nonatomic, assign) NSInteger nextPageNumber;
+@property (nonatomic, assign) NSInteger totalPageNumber;
+
+@end
+
 @implementation HWHomeApi
 
 
@@ -31,5 +38,31 @@
   return @{@"pageIndex":@1};
 }
 
+- (void)loadData
+{
+  [self startWithCompletionBlockWithSuccess:^(__kindof HWBaseRequest * _Nonnull request) {
+
+  } failure:^(__kindof HWBaseRequest * _Nonnull request) {
+    
+  }];
+}
+
+
+- (void)loadNextPage
+{
+  [self start];
+}
+
+
+
+- (void)requestFailedPreprocessor
+{
+
+}
+
+- (void)requestCompleteFilter
+{
+  
+}
 
 @end

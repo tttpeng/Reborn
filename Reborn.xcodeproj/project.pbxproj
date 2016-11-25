@@ -54,6 +54,10 @@
 		0486B7211DE53A2E000A7671 /* HWHospitalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7201DE53A2E000A7671 /* HWHospitalCell.m */; };
 		0486B7241DE53FA8000A7671 /* HWHospitalViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7231DE53FA8000A7671 /* HWHospitalViewModel.m */; };
 		0486B7271DE58429000A7671 /* HWHomeStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7261DE58429000A7671 /* HWHomeStoreManager.m */; };
+		0486B72A1DE7E73F000A7671 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7291DE7E73F000A7671 /* AESCipher.m */; };
+		0486B72D1DE7EA05000A7671 /* HWNetworkEncryptFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B72C1DE7EA05000A7671 /* HWNetworkEncryptFilter.m */; };
+		0486B7331DE7EF2B000A7671 /* NSString+HW.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7321DE7EF2B000A7671 /* NSString+HW.m */; };
+		0486B7361DE81CF4000A7671 /* HWNetworkLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0486B7351DE81CF4000A7671 /* HWNetworkLogger.m */; };
 		04FA3C391DE2DB9E00264A05 /* HWVersionGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA3C381DE2DB9E00264A05 /* HWVersionGuideViewController.m */; };
 		04FA3C3C1DE2DDA900264A05 /* AppDelegate+ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04FA3C3B1DE2DDA900264A05 /* AppDelegate+ViewController.m */; };
 		04FA3C401DE2E9E200264A05 /* 003.png in Resources */ = {isa = PBXBuildFile; fileRef = 04FA3C3D1DE2E9E200264A05 /* 003.png */; };
@@ -63,7 +67,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		042B1C021DDAB36700D610E5 /* HWColorTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HWColorTheme.h; sourceTree = "<group>"; };
+		042B1C021DDAB36700D610E5 /* HWColorTheme.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HWColorTheme.h; path = ../HWNetwork/HWColorTheme.h; sourceTree = "<group>"; };
 		042B1C031DDAB43F00D610E5 /* HW-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HW-prefix.pch"; sourceTree = "<group>"; };
 		042B1C041DDAB5E800D610E5 /* HWMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWMineViewController.h; sourceTree = "<group>"; };
 		042B1C051DDAB5E800D610E5 /* HWMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWMineViewController.m; sourceTree = "<group>"; };
@@ -159,6 +163,14 @@
 		0486B7231DE53FA8000A7671 /* HWHospitalViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHospitalViewModel.m; sourceTree = "<group>"; };
 		0486B7251DE58429000A7671 /* HWHomeStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWHomeStoreManager.h; sourceTree = "<group>"; };
 		0486B7261DE58429000A7671 /* HWHomeStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWHomeStoreManager.m; sourceTree = "<group>"; };
+		0486B7281DE7E73F000A7671 /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
+		0486B7291DE7E73F000A7671 /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
+		0486B72B1DE7EA05000A7671 /* HWNetworkEncryptFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWNetworkEncryptFilter.h; sourceTree = "<group>"; };
+		0486B72C1DE7EA05000A7671 /* HWNetworkEncryptFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWNetworkEncryptFilter.m; sourceTree = "<group>"; };
+		0486B7311DE7EF2B000A7671 /* NSString+HW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HW.h"; sourceTree = "<group>"; };
+		0486B7321DE7EF2B000A7671 /* NSString+HW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HW.m"; sourceTree = "<group>"; };
+		0486B7341DE81CF4000A7671 /* HWNetworkLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWNetworkLogger.h; sourceTree = "<group>"; };
+		0486B7351DE81CF4000A7671 /* HWNetworkLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWNetworkLogger.m; sourceTree = "<group>"; };
 		04FA3C371DE2DB9E00264A05 /* HWVersionGuideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HWVersionGuideViewController.h; sourceTree = "<group>"; };
 		04FA3C381DE2DB9E00264A05 /* HWVersionGuideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HWVersionGuideViewController.m; sourceTree = "<group>"; };
 		04FA3C3A1DE2DDA900264A05 /* AppDelegate+ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+ViewController.h"; sourceTree = "<group>"; };
@@ -213,6 +225,9 @@
 				042B1C151DDADAC500D610E5 /* UIColor+HW.h */,
 				042B1C161DDADAC500D610E5 /* UIColor+HW.m */,
 				042B1C181DDADCCA00D610E5 /* HWKit.h */,
+				0486B7311DE7EF2B000A7671 /* NSString+HW.h */,
+				0486B7321DE7EF2B000A7671 /* NSString+HW.m */,
+				042B1C021DDAB36700D610E5 /* HWColorTheme.h */,
 			);
 			path = HWKit;
 			sourceTree = "<group>";
@@ -329,7 +344,12 @@
 		044FDAD51DD46F1800FA9385 /* HWNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				042B1C021DDAB36700D610E5 /* HWColorTheme.h */,
+				0486B7341DE81CF4000A7671 /* HWNetworkLogger.h */,
+				0486B7351DE81CF4000A7671 /* HWNetworkLogger.m */,
+				0486B72B1DE7EA05000A7671 /* HWNetworkEncryptFilter.h */,
+				0486B72C1DE7EA05000A7671 /* HWNetworkEncryptFilter.m */,
+				0486B7281DE7E73F000A7671 /* AESCipher.h */,
+				0486B7291DE7E73F000A7671 /* AESCipher.m */,
 				044FDAD61DD46F1800FA9385 /* HWBaseRequest.h */,
 				044FDAD71DD46F1800FA9385 /* HWBaseRequest.m */,
 				044FDAD81DD46F1800FA9385 /* HWBatchRequest.h */,
@@ -524,14 +544,17 @@
 				0447A3DD1DD9E432001EAE32 /* HWHomeViewController.m in Sources */,
 				0486B7241DE53FA8000A7671 /* HWHospitalViewModel.m in Sources */,
 				0447A3C31DD9715B001EAE32 /* HWWeiBoObject.m in Sources */,
+				0486B7361DE81CF4000A7671 /* HWNetworkLogger.m in Sources */,
 				0486B7141DE44EC2000A7671 /* HWStore.m in Sources */,
 				0486B7271DE58429000A7671 /* HWHomeStoreManager.m in Sources */,
 				0486B71D1DE46283000A7671 /* HWHospital.m in Sources */,
 				044FDAEA1DD46F1800FA9385 /* HWBatchRequest.m in Sources */,
 				0447A3C81DD97542001EAE32 /* HWKeyValueStore.m in Sources */,
+				0486B7331DE7EF2B000A7671 /* NSString+HW.m in Sources */,
 				044FDB091DD576B100FA9385 /* HWRequestDApi.m in Sources */,
 				042B1C1B1DDB0D0E00D610E5 /* HWHomeTableViewController.m in Sources */,
 				04861BA51DDEFA30002B6BC6 /* UIView+AddLine.m in Sources */,
+				0486B72D1DE7EA05000A7671 /* HWNetworkEncryptFilter.m in Sources */,
 				0447A3DA1DD9D84F001EAE32 /* HWMainTabBarViewModel.m in Sources */,
 				044FDAEE1DD46F1800FA9385 /* HWNetworkAgent.m in Sources */,
 				04861BA21DDEF9DE002B6BC6 /* HWTableViewCell.m in Sources */,
@@ -557,6 +580,7 @@
 				04FA3C391DE2DB9E00264A05 /* HWVersionGuideViewController.m in Sources */,
 				044FDAE91DD46F1800FA9385 /* HWBaseRequest.m in Sources */,
 				044FDAEC1DD46F1800FA9385 /* HWChainRequest.m in Sources */,
+				0486B72A1DE7E73F000A7671 /* AESCipher.m in Sources */,
 				044FDAEB1DD46F1800FA9385 /* HWBatchRequestAgent.m in Sources */,
 				0486B71A1DE45C76000A7671 /* HWHomeApi.m in Sources */,
 				044FDB001DD5768E00FA9385 /* HWRequestAApi.m in Sources */,

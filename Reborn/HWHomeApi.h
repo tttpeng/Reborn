@@ -10,4 +10,8 @@
 
 @interface HWHomeApi : HWRequest
 
+
+- (void)loadData;
+- (void)loadNextPage;
+
 @end

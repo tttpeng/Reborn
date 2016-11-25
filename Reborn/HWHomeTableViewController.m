@@ -30,17 +30,16 @@
   [self setNavigateTitle:@"空列表" rightButtonTitle:@"添加"];
   _store = [[HWHomeStore alloc] init];
   
-  [self.store requestSubjectDataWithCallback:^{
+  [self.store loadNewDataWithCallBack:^(NSString *errorMessage) {
     [self.tableView reloadData];
   }];
-  
   //  [self.tableView registerClass:[HWHospitalCell class] forCellReuseIdentifier:@"key"];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return self.store.hospitals.count;
+  return self.store.hospitalViewModels.count;
 }
 
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -56,6 +55,25 @@
   cell.contentView.backgroundColor = [UIColor greenColor];
 }
 
+- (void)loadNewData
+{
+  [self.store loadNewDataWithCallBack:^(NSString *errorMessage) {
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView reloadData];
+  }];
+}
+
+- (void)loadMoreData
+{
+  [self.store loadMoreDataWithCallBack:^(NSString *errorMessage, BOOL hasNextPage) {
+    [self.tableView.mj_footer endRefreshing];
+    [self.tableView reloadData];
+    if (!hasNextPage) {
+      [self dontNeedLoadMore];
+    }    
+  }];
+}
+
 
 - (void)rightButtonClicked:(UIButton *)button
 {
@@ -64,7 +82,7 @@
 
 - (void)emptyViewReladButtonDidTap
 {
-  NSLog(@"继续加载按钮被点击");
+  [self loadNewData];
 }
 
 

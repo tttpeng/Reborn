@@ -8,10 +8,18 @@
 
 #import "HWRequest.h"
 
+typedef void(^HWHomeApiCompletionBlock)( NSArray * _Nullable hospitals);
+typedef void(^HWHomeApiFailureBlock)(__kindof HWBaseRequest * _Nonnull request);
+
+
 @interface HWHomeApi : HWRequest
 
 
-- (void)loadData;
-- (void)loadNextPage;
+- (void)loadDataWithCompletionBlockWithSuccess:(nullable HWHomeApiCompletionBlock)success
+                                       failure:(nullable HWHomeApiFailureBlock)failure;
+
+- (void)loadNextPageWithCompletionBlockWithSuccess:(nullable HWHomeApiCompletionBlock)success
+                                       failure:(nullable HWHomeApiFailureBlock)failure;
+
 
 @end

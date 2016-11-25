@@ -7,6 +7,7 @@
 //
 
 #import "HWBaseViewController.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface HWBaseTableViewController : HWBaseViewController<UITableViewDelegate,UITableViewDataSource>
 
@@ -18,8 +19,13 @@
 
 - (void)emptyViewReladButtonDidTap;
 
-
 - (void)configDataForCell:(id)cell atIndexPath:(NSIndexPath *)indexPath;
+
+
+- (void)loadNewData;
+- (void)loadMoreData;
+
+- (void)dontNeedLoadMore;
 
 
 @end

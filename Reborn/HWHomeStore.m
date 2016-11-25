@@ -24,26 +24,40 @@
   
 }
 
-- (void)requestSubjectDataWithCallback:(void(^)())completion
+
+- (void)loadNewDataWithCallBack:(void(^)(NSString *errorMessage))completion
 {
-  [self.api startWithCompletionBlockWithSuccess:^(__kindof HWBaseRequest * _Nonnull request) {
-    _hospitals = [HWHospital arrayOfModelsFromDictionaries:request.responseJSONObject[@"data"][@"sourceItems"]];
-    
+  [self.api loadDataWithCompletionBlockWithSuccess:^(NSArray * _Nullable hospitals) {
     NSMutableArray *array = [NSMutableArray array];
-    for (HWHospital *hospital in self.hospitals) {
+    for (HWHospital *hospital in hospitals) {
       HWHospitalViewModel *viewModel = [HWHospitalViewModel viewModelWith:hospital];
       [array addObject:viewModel];
     }
     _hospitalViewModels = array;
-    completion();
-    
+    completion(nil);
   } failure:^(__kindof HWBaseRequest * _Nonnull request) {
-    
-    completion();
-    
+    completion(request.error.userInfo[@"errorMessage"]);
   }];
 }
 
+- (void)loadMoreDataWithCallBack:(void(^)(NSString *errorMessage, BOOL hasNextPage))completion
+{
+  [self.api loadNextPageWithCompletionBlockWithSuccess:^(NSArray * _Nullable hospitals) {
+    NSMutableArray *array = [NSMutableArray arrayWithArray:self.hospitalViewModels];
+    for (HWHospital *hospital in hospitals) {
+      HWHospitalViewModel *viewModel = [HWHospitalViewModel viewModelWith:hospital];
+      [array addObject:viewModel];
+    }
+    _hospitalViewModels = array;
+    BOOL hasNexPage = YES;
+    if (hospitals.count < 20) {
+      hasNexPage = NO;
+    }
+    completion(nil,hasNexPage);
+  } failure:^(__kindof HWBaseRequest * _Nonnull request) {
+    completion(request.error.userInfo[@"errorMessage"],NO);
+  }];
+}
 
 
 - (HWHomeApi *)api

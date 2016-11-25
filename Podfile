@@ -8,4 +8,6 @@ target 'Reborn' do
   pod 'UITableView+FDTemplateLayoutCell', '~> 1.5.beta'
   pod 'EAIntroView', '~> 2.10.0'
   pod 'SDWebImage', '~> 4.0.0-beta2'
+  pod 'MJRefresh', '~> 3.1.12'
+  
 end

@@ -16,7 +16,9 @@
 @property (nonatomic, strong) NSArray *hospitalViewModels;
 @property (nonatomic, strong) HWHospitalViewModel *hospitalVieModel;
 
-- (void)requestSubjectDataWithCallback:(void(^)())completion;
+- (void)loadNewDataWithCallBack:(void(^)(NSString *errorMessage))completion;
+- (void)loadMoreDataWithCallBack:(void(^)(NSString *errorMessage, BOOL hasNextPage))completion;
+
 - (void)fetchDataWithViewModel:(id)viewModel;
 
 //- (void)loadData;

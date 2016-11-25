@@ -21,7 +21,6 @@
   [super initController];
 }
 
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.automaticallyAdjustsScrollViewInsets = NO;
@@ -47,6 +46,33 @@
     make.top.mas_equalTo(64);
     make.bottom.mas_equalTo(0);
   }];
+  
+  [self setupRefreshCompnent];
+}
+
+
+- (void)setupRefreshCompnent
+{
+  self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+  MJRefreshAutoStateFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadMoreData)];
+  footer.triggerAutomaticallyRefreshPercent = -3;
+  self.tableView.mj_footer = footer;
+
+}
+
+- (void)dontNeedLoadMore
+{
+  MJRefreshAutoStateFooter *footer = (MJRefreshAutoStateFooter *)self.tableView.mj_footer;
+  [footer endRefreshingWithNoMoreData];
+}
+- (void)loadNewData
+{
+  
+}
+
+- (void)loadMoreData
+{
+  
 }
 
 #pragma mark - 数据源
@@ -86,6 +112,15 @@
 }
 
 #pragma mark - 空白占位图
+- (void)emptyDataSetWillAppear:(UIScrollView *)scrollView
+{
+  self.tableView.mj_footer.hidden = YES;
+}
+
+- (void)emptyDataSetWillDisappear:(UIScrollView *)scrollView
+{
+  self.tableView.mj_footer.hidden = NO;
+}
 
 - (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
 {

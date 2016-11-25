@@ -7,6 +7,7 @@
 //
 
 #import "HWHomeApi.h"
+#import "HWHospital.h"
 
 @interface HWHomeApi ()
 
@@ -35,34 +36,45 @@
 
 - (id)requestArgument
 {
-  return @{@"pageIndex":@1};
+  return @{@"pageIndex":@(_nextPageNumber)};
 }
 
-- (void)loadData
-{
-  [self startWithCompletionBlockWithSuccess:^(__kindof HWBaseRequest * _Nonnull request) {
 
+- (void)loadDataSuccess:(void(^)(BOOL success))completion
+{
+  completion(YES);
+}
+
+- (void)loadDataWithCompletionBlockWithSuccess:(HWHomeApiCompletionBlock)success
+                                       failure:(HWHomeApiFailureBlock)failure
+{
+  self.nextPageNumber = 19;
+  [self startWithCompletionBlockWithSuccess:^(__kindof HWBaseRequest * _Nonnull request) {
+    NSArray *hospitals = [HWHospital arrayOfModelsFromDictionaries:request.responseJSONObject[@"data"][@"sourceItems"]];
+    success(hospitals);
   } failure:^(__kindof HWBaseRequest * _Nonnull request) {
-    
+    success(@[]);
   }];
 }
 
 
-- (void)loadNextPage
+- (void)loadNextPageWithCompletionBlockWithSuccess:(HWHomeApiCompletionBlock)success
+                                           failure:(HWHomeApiFailureBlock)failure
 {
-  [self start];
+  [self startWithCompletionBlockWithSuccess:^(__kindof HWBaseRequest * _Nonnull request) {
+    NSArray *hospitals = [HWHospital arrayOfModelsFromDictionaries:request.responseJSONObject[@"data"][@"sourceItems"]];
+    success(hospitals);
+  } failure:^(__kindof HWBaseRequest * _Nonnull request) {
+    failure(request);
+  }];
 }
 
 
 
-- (void)requestFailedPreprocessor
-{
-
-}
 
 - (void)requestCompleteFilter
 {
-  
+  self.nextPageNumber++;
 }
 
 @end

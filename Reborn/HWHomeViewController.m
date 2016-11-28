@@ -8,6 +8,7 @@
 
 #import "HWHomeViewController.h"
 #import "HWHomeTableViewController.h"
+#import "HWLoginManager.h"
 
 @interface HWHomeViewController ()
 
@@ -30,6 +31,18 @@
     make.centerX.equalTo(self.view);
     make.top.equalTo(self.view).offset(200);
   }];
+  
+  
+  
+//  HWUser *user = [HWLoginManager shareInstance].user;
+//  user.Id = @"123";
+//  user.nickName = @"asd";
+//  [[HWLoginManager shareInstance] saveUser];
+//  
+  NSLog(@"%@",[HWLoginManager shareInstance].user);
+//  [[HWLoginManager shareInstance] saveToken:@"tttoken123123123"];
+  
+  
   
 }
 

@@ -17,11 +17,6 @@
   return @{@"userId":@"userId"};
 }
 
-- (NSString *)filterUrl:(NSString *)originUrl withRequest:(HWBaseRequest *)request
-{
-  return originUrl;
-}
-
 - (NSData *)beforePerformCompleteWithRequest:(HWBaseRequest *)request
 {
   NSString *userId = request.currentRequest.allHTTPHeaderFields[@"userId"];

@@ -10,6 +10,7 @@
 #import "HWNetworkConfig.h"
 #import "AppDelegate+ViewController.h"
 #import "HWNetworkEncryptFilter.h"
+#import "HWNetworkUserFlier.h"
 
 @interface AppDelegate ()
 
@@ -25,8 +26,9 @@
   networkConfig.debugLogEnabled = YES;
   networkConfig.baseUrl = @"http://123.56.182.116:8080/zhongmeban/api";
   HWNetworkEncryptFilter *urlFilter = [[HWNetworkEncryptFilter alloc] init];
+  HWNetworkUserFlier *userFilter = [[HWNetworkUserFlier alloc] init];
   [networkConfig addUrlFilter:urlFilter];
-
+  [networkConfig addUrlFilter:userFilter];
   self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
   self.window.backgroundColor = [UIColor whiteColor];
 

@@ -8,6 +8,7 @@
 
 #import "HWObject.h"
 #import <YYModel/YYModel.h>
+#import "HWKeyValueStore.h"
 
 @implementation HWObject
 
@@ -66,5 +67,18 @@
   }
   return resultArray;
 }
+
+- (void)encodeWithCoder:(NSCoder *)aCoder { [self yy_modelEncodeWithCoder:aCoder]; }
+- (id)initWithCoder:(NSCoder *)aDecoder { self = [super init]; return [self yy_modelInitWithCoder:aDecoder]; }
+- (id)copyWithZone:(NSZone *)zone { return [self yy_modelCopy]; }
+
+
+
+- (void)saveWithKey:(NSString *)key
+{
+
+  [[self class] description];
+}
+
 
 @end

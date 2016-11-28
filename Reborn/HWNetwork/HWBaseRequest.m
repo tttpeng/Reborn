@@ -182,6 +182,11 @@ NSString *const HWRequestValidationErrorDomain = @"request.validation";
     return nil;
 }
 
+- (BOOL)responseContentValidator
+{
+  return YES;
+}
+
 - (BOOL)statusCodeValidator {
     NSInteger statusCode = [self responseStatusCode];
     return (statusCode >= 200 && statusCode <= 299);

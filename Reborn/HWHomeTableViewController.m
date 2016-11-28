@@ -30,10 +30,10 @@
   [self setNavigateTitle:@"空列表" rightButtonTitle:@"添加"];
   _store = [[HWHomeStore alloc] init];
   
-  [self.store loadNewDataWithCallBack:^(NSString *errorMessage) {
+  [self.store loadNewDataWithCallback:^{
     [self.tableView reloadData];
+  } failure:^(HWStoreErrorType type, NSString *errorMessage) {
   }];
-  //  [self.tableView registerClass:[HWHospitalCell class] forCellReuseIdentifier:@"key"];
 }
 
 
@@ -57,20 +57,24 @@
 
 - (void)loadNewData
 {
-  [self.store loadNewDataWithCallBack:^(NSString *errorMessage) {
+  [self.store loadNewDataWithCallback:^{
     [self.tableView.mj_header endRefreshing];
     [self.tableView reloadData];
+  } failure:^(HWStoreErrorType type, NSString *errorMessage) {
+    [self.tableView.mj_footer endRefreshing];
   }];
 }
 
 - (void)loadMoreData
 {
-  [self.store loadMoreDataWithCallBack:^(NSString *errorMessage, BOOL hasNextPage) {
+  [self.store loadMoreDataWithCallBack:^{
     [self.tableView.mj_footer endRefreshing];
     [self.tableView reloadData];
-    if (!hasNextPage) {
+  } failure:^(HWStoreErrorType type, NSString *errorMessage) {
+    [self.tableView.mj_footer endRefreshing];
+    if (type == HWStoreErrorTypeNoNextPage) {
       [self dontNeedLoadMore];
-    }    
+    }
   }];
 }
 

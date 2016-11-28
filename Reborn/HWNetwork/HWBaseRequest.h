@@ -15,6 +15,7 @@ FOUNDATION_EXPORT NSString *const HWRequestValidationErrorDomain;
 NS_ENUM(NSInteger) {
     HWRequestValidationErrorInvalidStatusCode = -8,
     HWRequestValidationErrorInvalidJSONFormat = -9,
+    HWRequestValidationErrorInvalidNoContent  = -10,
 };
 
 ///  HTTP Request method.
@@ -323,8 +324,12 @@ typedef void(^HWRequestCompletionBlock)(__kindof HWBaseRequest *request);
 ///  The validator will be used to test if `responseJSONObject` is correctly formed.
 - (nullable id)jsonValidator;
 
+//验证返回的数据是否符合要求
+- (BOOL)responseContentValidator;
+
 ///  This validator will be used to test if `responseStatusCode` is valid.
 - (BOOL)statusCodeValidator;
+
 
 @end
 

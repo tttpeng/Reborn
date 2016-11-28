@@ -98,7 +98,9 @@
   // Filter URL if needed
   NSArray *filters = [_config urlFilters];
   for (id<HWNetworkFilterProtocol> f in filters) {
-    detailUrl = [f filterUrl:detailUrl withRequest:request];
+    if ([f respondsToSelector:@selector(filterUrl:withRequest:)]) {
+      detailUrl = [f filterUrl:detailUrl withRequest:request];
+    }
   }
   
   NSString *baseUrl;
@@ -147,11 +149,13 @@
   //通过过滤器添加通用 Request Headers
   NSArray *filters = [_config urlFilters];
   for (id<HWNetworkFilterProtocol> f in filters) {
-    NSDictionary<NSString *, NSString *> *headerFieldValueDictionary = [f commonRequestHeadersWithRequest:request];
-    if (headerFieldValueDictionary != nil) {
-      for (NSString *httpHeaderField in headerFieldValueDictionary.allKeys) {
-        NSString *value = headerFieldValueDictionary[httpHeaderField];
-        [requestSerializer setValue:value forHTTPHeaderField:httpHeaderField];
+    if ([f respondsToSelector:@selector(commonRequestHeadersWithRequest:)]) {      
+      NSDictionary<NSString *, NSString *> *headerFieldValueDictionary = [f commonRequestHeadersWithRequest:request];
+      if (headerFieldValueDictionary != nil) {
+        for (NSString *httpHeaderField in headerFieldValueDictionary.allKeys) {
+          NSString *value = headerFieldValueDictionary[httpHeaderField];
+          [requestSerializer setValue:value forHTTPHeaderField:httpHeaderField];
+        }
       }
     }
   }
@@ -286,6 +290,13 @@
       return result;
     }
   }
+  
+  BOOL contentValidateResult = [request responseContentValidator];
+  if (!contentValidateResult) {
+    *error = [NSError errorWithDomain:HWRequestValidationErrorDomain code:HWRequestValidationErrorInvalidNoContent userInfo:@{NSLocalizedDescriptionKey:@"Invalid Content"}];
+    return contentValidateResult;
+  }
+  
   return YES;
 }
 
@@ -309,12 +320,14 @@
   NSError * __autoreleasing validationError = nil;
   
   NSError *requestError = nil;
-  BOOL succeed = NO;  
+  BOOL succeed = NO;
   
   request.responseObject = responseObject;
   NSArray *filters = [_config urlFilters];
   for (id<HWNetworkFilterProtocol> f in filters) {
-    request.responseObject = [f beforePerformCompleteWithRequest:request];
+    if ([f respondsToSelector:@selector(beforePerformCompleteWithRequest:)]) {
+      request.responseObject = [f beforePerformCompleteWithRequest:request];
+    }
   }
   if ([request.responseObject isKindOfClass:[NSData class]]) {
     request.responseData = request.responseObject;

@@ -53,24 +53,32 @@
     NSArray *hospitals = [HWHospital arrayOfModelsFromDictionaries:request.responseJSONObject[@"data"][@"sourceItems"]];
     success(hospitals);
   } failure:^(__kindof HWBaseRequest * _Nonnull request) {
+    NSLog(@"%@",request.error);
     success(@[]);
   }];
 }
 
 
-- (void)loadNextPageWithCompletionBlockWithSuccess:(HWHomeApiCompletionBlock)success
+- (void)loadNextPageWithCompletionBlockWithSuccess:(void (^)(NSArray *, BOOL))success
                                            failure:(HWHomeApiFailureBlock)failure
 {
   [self startWithCompletionBlockWithSuccess:^(__kindof HWBaseRequest * _Nonnull request) {
     NSArray *hospitals = [HWHospital arrayOfModelsFromDictionaries:request.responseJSONObject[@"data"][@"sourceItems"]];
-    success(hospitals);
+    success(hospitals,YES);
   } failure:^(__kindof HWBaseRequest * _Nonnull request) {
-    failure(request);
+    NSLog(@"%@",request.error);
+    failure(@"123",request.error.code);
   }];
 }
 
-
-
+- (BOOL)responseContentValidator
+{
+  NSArray *array = self.responseObject[@"data"][@"sourceItems"];
+  if (array.count > 0) {
+    return YES;
+  }
+  return NO;
+}
 
 - (void)requestCompleteFilter
 {

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HWObject : NSObject
+@interface HWObject : NSObject<NSCoding, NSCopying>
 
 /**  @brief  根据字典转相应的对象 */
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
@@ -49,5 +49,8 @@
 /**  @brief  Model 数组转字典数组 */
 + (NSArray *)arrayOfDictionariesFromModels:(NSArray *)array;
 
+
+
+- (void)saveWithKey:(NSString *)key;
 
 @end

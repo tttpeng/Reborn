@@ -15,12 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 ///  HWUrlFilterProtocol can be used to append common parameters to requests before sending them.
 @protocol HWNetworkFilterProtocol <NSObject>
-///  Preprocess request URL before actually sending them.
-///
-///  @param originUrl request's origin URL, which is returned by `requestUrl`
-///  @param request   request itself
-///
-///  @return A new url which will be used as a new `requestUrl`
+
+@optional
+
 - (NSString *)filterUrl:(NSString *)originUrl withRequest:(HWBaseRequest *)request;
 
 - (NSDictionary *)commonRequestHeadersWithRequest:(HWBaseRequest *)request;

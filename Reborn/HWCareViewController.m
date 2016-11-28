@@ -8,6 +8,7 @@
 
 #import "HWCareViewController.h"
 #import "HWNewTableViewController.h"
+#import "HWSearchViewController.h"
 
 @interface HWCareViewController ()
 
@@ -35,7 +36,7 @@
 
 - (void)push
 {
-  HWNewTableViewController *controller = [[HWNewTableViewController alloc] init];
+  HWSearchViewController *controller = [[HWSearchViewController alloc] init];
   [self.navigationController pushViewController:controller animated:YES];
 }
 

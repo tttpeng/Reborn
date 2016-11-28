@@ -25,7 +25,7 @@
 }
 
 
-- (void)loadNewDataWithCallBack:(void(^)(NSString *errorMessage))completion
+- (void)loadNewDataWithCallback:(void (^)())success failure:(HWStoreErrorBlock)failure
 {
   [self.api loadDataWithCompletionBlockWithSuccess:^(NSArray * _Nullable hospitals) {
     NSMutableArray *array = [NSMutableArray array];
@@ -34,29 +34,36 @@
       [array addObject:viewModel];
     }
     _hospitalViewModels = array;
-    completion(nil);
-  } failure:^(__kindof HWBaseRequest * _Nonnull request) {
-    completion(request.error.userInfo[@"errorMessage"]);
+    
+    success();
+  } failure:^(NSString *errorMessage, NSInteger errorCode) {
+    failure(HWStoreErrorTypeNone,errorMessage);
   }];
 }
 
-- (void)loadMoreDataWithCallBack:(void(^)(NSString *errorMessage, BOOL hasNextPage))completion
+
+//五种状态的切换
+
+
+- (void)loadMoreDataWithCallBack:(void (^)())success failure:(HWStoreErrorBlock)failure
 {
-  [self.api loadNextPageWithCompletionBlockWithSuccess:^(NSArray * _Nullable hospitals) {
+  
+  [self.api loadNextPageWithCompletionBlockWithSuccess:^(NSArray *hospitals, BOOL isHaveNextPage) {
     NSMutableArray *array = [NSMutableArray arrayWithArray:self.hospitalViewModels];
     for (HWHospital *hospital in hospitals) {
       HWHospitalViewModel *viewModel = [HWHospitalViewModel viewModelWith:hospital];
       [array addObject:viewModel];
     }
     _hospitalViewModels = array;
-    BOOL hasNexPage = YES;
-    if (hospitals.count < 20) {
-      hasNexPage = NO;
+    success();
+  } failure:^(NSString *errorMessage, NSInteger errorCode) {
+    if (errorCode == HWRequestValidationErrorInvalidNoContent) {
+      failure(HWStoreErrorTypeNoNextPage,errorMessage);
+      return;
     }
-    completion(nil,hasNexPage);
-  } failure:^(__kindof HWBaseRequest * _Nonnull request) {
-    completion(request.error.userInfo[@"errorMessage"],NO);
+    failure(HWStoreErrorTypeNone,errorMessage);
   }];
+  
 }
 
 

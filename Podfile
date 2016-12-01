@@ -1,5 +1,3 @@
-use_frameworks!
-
 target 'Reborn' do
 
 	pod 'AFNetworking', '~> 3.1.0'

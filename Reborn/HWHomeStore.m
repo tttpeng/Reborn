@@ -26,7 +26,6 @@
   } failure:^(NSInteger errorCode, NSString *errorMessage) {
     callback(HWStoreDataStateNoContent,errorMessage);
   }];
-
 }
 
 - (void)loadMoreDataWithCallBack:(HWStoreCallBackBlock)callback
@@ -44,6 +43,7 @@
     callback(HWStoreDataStateNoContent,errorMessage);
   }];
 }
+
 
 - (HWHomeApi *)api
 {

@@ -42,9 +42,8 @@
   NSLog(@"%@",[HWLoginManager shareInstance].user);
 //  [[HWLoginManager shareInstance] saveToken:@"tttoken123123123"];
   
-  
-  
 }
+
 
 - (void)push
 {

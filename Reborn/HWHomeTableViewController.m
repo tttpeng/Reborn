@@ -10,10 +10,12 @@
 #import "HWHomeStore.h"
 #import "HWHospitalCell.h"
 #import "HWHospitalViewModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface HWHomeTableViewController ()
 
 @property (nonatomic, strong) HWHomeStore *store;
+@property (nonatomic, strong) HWHospitalViewModel *viewModel;
 
 @end
 
@@ -28,66 +30,43 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   [self setNavigateTitle:@"空列表" rightButtonTitle:@"添加"];
-  _store = [[HWHomeStore alloc] init];
-  
-  [self.store loadNewDataWithCallback:^{
-    [self.tableView reloadData];
-  } failure:^(HWStoreErrorType type, NSString *errorMessage) {
-  }];
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-  return self.store.hospitalViewModels.count;
+  return self.store.hospitals.count;
 }
-
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//  HWHospitalCell *cell = [tableView dequeueReusableCellWithIdentifier:@"key"];
-//  return cell;
-//}
 
 - (void)configDataForCell:(HWHospitalCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
-//  HWHospitalViewModel *viewModel = [[HWHospitalViewModel alloc] initWithHospital:self.store.hospitals[indexPath.row]];
-  [cell bindDataWith:self.store.hospitalViewModels[indexPath.row]];
   cell.contentView.backgroundColor = [UIColor greenColor];
+  cell.nameLabel.text = [self.viewModel hospitalNameAtIndex:indexPath.row];
+  cell.addressLabel.text = [self.viewModel hospitalAddressAtIndex:indexPath.row];
+  [cell.pictureView sd_setImageWithURL:[self.viewModel hospitalPictureURLAtIndex:indexPath.row]];
 }
-
-- (void)loadNewData
-{
-  [self.store loadNewDataWithCallback:^{
-    [self.tableView.mj_header endRefreshing];
-    [self.tableView reloadData];
-  } failure:^(HWStoreErrorType type, NSString *errorMessage) {
-    [self.tableView.mj_footer endRefreshing];
-  }];
-}
-
-- (void)loadMoreData
-{
-  [self.store loadMoreDataWithCallBack:^{
-    [self.tableView.mj_footer endRefreshing];
-    [self.tableView reloadData];
-  } failure:^(HWStoreErrorType type, NSString *errorMessage) {
-    [self.tableView.mj_footer endRefreshing];
-    if (type == HWStoreErrorTypeNoNextPage) {
-      [self dontNeedLoadMore];
-    }
-  }];
-}
-
 
 - (void)rightButtonClicked:(UIButton *)button
 {
   NSLog(@"添加按钮被点击了");
 }
 
-- (void)emptyViewReladButtonDidTap
+
+- (HWHospitalViewModel *)viewModel
 {
-  [self loadNewData];
+  if (_viewModel == nil) {
+    _viewModel = [[HWHospitalViewModel alloc] init];
+    _viewModel.store = self.store;
+  }
+  return _viewModel;
 }
 
+- (HWHomeStore *)store
+{
+  if (_store == nil) {
+    _store = [[HWHomeStore alloc] init];
+  }
+  return _store;
+}
 
 @end

@@ -27,4 +27,6 @@
 
 - (void)pushViewController:(UIViewController *)controller;
 
+- (void)refreshData;
+
 @end

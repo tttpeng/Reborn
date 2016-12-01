@@ -11,7 +11,6 @@
 
 @interface HWNetworkEncryptFilter : NSObject <HWNetworkFilterProtocol>
 
-- (NSString *)filterUrl:(NSString *)originUrl withRequest:(HWBaseRequest *)request;
 - (NSDictionary *)commonRequestHeadersWithRequest:(HWBaseRequest *)request;
 - (NSData *)beforePerformCompleteWithRequest:(HWBaseRequest *)request;
 

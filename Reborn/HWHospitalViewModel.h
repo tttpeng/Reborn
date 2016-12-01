@@ -2,20 +2,19 @@
 //  HWHospitalViewModel.h
 //  Reborn
 //
-//  Created by tpeng on 2016/11/23.
+//  Created by tpeng on 2016/12/1.
 //  Copyright © 2016年 healthcare-works. All rights reserved.
 //
 
 #import "HWViewModel.h"
-#import "HWHospital.h"
+#import "HWHomeStore.h"
 
 @interface HWHospitalViewModel : HWViewModel
 
-@property (nonatomic, copy) NSURL *pictureURL;
-@property (nonatomic, copy) NSString *hospitalName;
-@property (nonatomic, copy) NSString *addressName;
+@property (nonatomic, weak) HWHomeStore *store;
 
-+ (instancetype)viewModelWith:(HWHospital *)hospital;
-
+- (NSURL *)hospitalPictureURLAtIndex:(NSInteger)index;
+- (NSString *)hospitalNameAtIndex:(NSInteger)index;
+- (NSString *)hospitalAddressAtIndex:(NSInteger)index;
 
 @end

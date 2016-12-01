@@ -122,5 +122,9 @@
   [self.navigationController pushViewController:controller animated:YES];
 }
 
+- (void)refreshData
+{
+  
+}
 
 @end

@@ -19,10 +19,7 @@
 @implementation HWHomeApi
 
 
-- (NSString *)baseUrl
-{
-  return @"http://123.56.182.156:8080/zhongmeban/api";
-}
+
 
 - (NSString *)requestUrl
 {
@@ -48,13 +45,12 @@
 - (void)loadDataWithCompletionBlockWithSuccess:(HWHomeApiCompletionBlock)success
                                        failure:(HWHomeApiFailureBlock)failure
 {
-  self.nextPageNumber = 19;
+  self.nextPageNumber = 420;
   [self startWithCompletionBlockWithSuccess:^(__kindof HWBaseRequest * _Nonnull request) {
     NSArray *hospitals = [HWHospital arrayOfModelsFromDictionaries:request.responseJSONObject[@"data"][@"sourceItems"]];
     success(hospitals);
   } failure:^(__kindof HWBaseRequest * _Nonnull request) {
-    NSLog(@"%@",request.error);
-    success(@[]);
+    failure(request.error.code,nil);
   }];
 }
 
@@ -66,8 +62,7 @@
     NSArray *hospitals = [HWHospital arrayOfModelsFromDictionaries:request.responseJSONObject[@"data"][@"sourceItems"]];
     success(hospitals,YES);
   } failure:^(__kindof HWBaseRequest * _Nonnull request) {
-    NSLog(@"%@",request.error);
-    failure(@"123",request.error.code);
+    failure(request.error.code,nil);
   }];
 }
 

@@ -13,7 +13,7 @@
 
 + (void)logRequestDebugInfoWithRequest:(HWBaseRequest *)request
 {
-
+  
   NSMutableString *logString = [NSMutableString stringWithString:@"\n\n============================================================\n|                      Request Start                       |\n============================================================\n\n"];
   
   [logString appendFormat:@"API Name:\t\t%@\n", request.requestUrl];
@@ -30,17 +30,17 @@
 {
   BOOL shouldLogError = request.error ? YES : NO;
   
-
+  
   NSMutableString *logString = [NSMutableString stringWithString:@"\n\n==============================================================\n=                        API Response                        =\n==============================================================\n\n"];
   
   [logString appendFormat:@"Status:\t%ld\t(%@)\n\n", (long)request.responseStatusCode, [NSHTTPURLResponse localizedStringForStatusCode:request.responseStatusCode]];
   [logString appendFormat:@"Content:\n\t%@\n\n", request.responseString];
   if (shouldLogError) {
     NSError *error = request.error;
-    [logString appendFormat:@"Error Domain:\t\t\t\t\t\t\t%@\n", error.domain];
-    [logString appendFormat:@"Error Domain Code:\t\t\t\t\t\t%ld\n", (long)error.code];
+    [logString appendFormat:@"Error Domain:\t\t\t\t\t\t%@\n", error.domain];
+    [logString appendFormat:@"Error Domain Code:\t\t\t\t\t%ld\n", (long)error.code];
     [logString appendFormat:@"Error Localized Description:\t\t\t%@\n", error.localizedDescription];
-    [logString appendFormat:@"Error Localized Failure Reason:\t\t\t%@\n", error.localizedFailureReason];
+    [logString appendFormat:@"Error Localized Failure Reason:\t\t%@\n", error.localizedFailureReason];
     [logString appendFormat:@"Error Localized Recovery Suggestion:\t%@\n\n", error.localizedRecoverySuggestion];
   }
   

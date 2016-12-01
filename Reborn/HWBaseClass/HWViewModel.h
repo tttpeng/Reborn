@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HWStore.h"
 
 @interface HWViewModel : NSObject
+
+@property (nonatomic, weak) HWStore *store;
 
 @end

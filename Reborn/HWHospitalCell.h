@@ -11,6 +11,8 @@
 
 @interface HWHospitalCell : HWTableViewCell
 
-- (void)bindDataWith:(HWHospitalViewModel *)viewModel;
+@property (nonatomic, strong) UIImageView *pictureView;
+@property (nonatomic, strong) UILabel *nameLabel;
+@property (nonatomic, strong) UILabel *addressLabel;
 
 @end

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 healthcare-works. All rights reserved.
 //
 
-#import "HWBaseTableViewController.h"
+#import "HWPageTableViewController.h"
 
-@interface HWHomeTableViewController : HWBaseTableViewController
+@interface HWHomeTableViewController : HWPageTableViewController
 
 @end

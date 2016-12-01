@@ -8,7 +8,7 @@
 
 #import "HWBaseTableViewController.h"
 #import <DZNEmptyDataSet/UIScrollView+EmptyDataSet.h>
-#import <UITableView+FDTemplateLayoutCell/UITableView+FDTemplateLayoutCell.h>
+#import "UITableView+FDTemplateLayoutCell.h"
 
 @interface HWBaseTableViewController ()<DZNEmptyDataSetSource,DZNEmptyDataSetDelegate>
 
@@ -65,9 +65,11 @@
   MJRefreshAutoStateFooter *footer = (MJRefreshAutoStateFooter *)self.tableView.mj_footer;
   [footer endRefreshingWithNoMoreData];
 }
+
 - (void)loadNewData
 {
-  
+  MJRefreshAutoStateFooter *footer = (MJRefreshAutoStateFooter *)self.tableView.mj_footer;
+  [footer resetNoMoreData];
 }
 
 - (void)loadMoreData

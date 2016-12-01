@@ -24,7 +24,7 @@
   
   HWNetworkConfig *networkConfig = [HWNetworkConfig sharedConfig];
   networkConfig.debugLogEnabled = YES;
-  networkConfig.baseUrl = @"http://123.56.182.116:8080/zhongmeban/api";
+  networkConfig.baseUrl = @"http://m.yizhi360.com:8080/zhongmeban/api";
   HWNetworkEncryptFilter *urlFilter = [[HWNetworkEncryptFilter alloc] init];
   HWNetworkUserFlier *userFilter = [[HWNetworkUserFlier alloc] init];
   [networkConfig addUrlFilter:urlFilter];

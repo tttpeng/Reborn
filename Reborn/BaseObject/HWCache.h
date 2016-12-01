@@ -8,10 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+//TODO: 根据后期缓存需求处理
 @interface HWCache : NSObject
-
-+ (instancetype)userCache;
-+ (instancetype)dataCache;
 
 
 @end

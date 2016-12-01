@@ -8,7 +8,6 @@
 
 #import "HWHomeStore.h"
 #import "HWHomeApi.h"
-#import "HWHospital.h"
 #import "HWHospitalViewModel.h"
 
 @interface HWHomeStore ()
@@ -19,53 +18,32 @@
 
 @implementation HWHomeStore
 
--(void)fetchDataWithViewModel:(id)viewModel
-{
-  
-}
-
-
-- (void)loadNewDataWithCallback:(void (^)())success failure:(HWStoreErrorBlock)failure
+- (void)loadNewDataWithCallBack:(HWStoreCallBackBlock)callback
 {
   [self.api loadDataWithCompletionBlockWithSuccess:^(NSArray * _Nullable hospitals) {
-    NSMutableArray *array = [NSMutableArray array];
-    for (HWHospital *hospital in hospitals) {
-      HWHospitalViewModel *viewModel = [HWHospitalViewModel viewModelWith:hospital];
-      [array addObject:viewModel];
-    }
-    _hospitalViewModels = array;
-    
-    success();
-  } failure:^(NSString *errorMessage, NSInteger errorCode) {
-    failure(HWStoreErrorTypeNone,errorMessage);
+    _hospitals = hospitals;
+    callback(HWStoreDataStateNormal,nil);;
+  } failure:^(NSInteger errorCode, NSString *errorMessage) {
+    callback(HWStoreDataStateNoContent,errorMessage);
   }];
+
 }
 
-
-//五种状态的切换
-
-
-- (void)loadMoreDataWithCallBack:(void (^)())success failure:(HWStoreErrorBlock)failure
+- (void)loadMoreDataWithCallBack:(HWStoreCallBackBlock)callback
 {
-  
   [self.api loadNextPageWithCompletionBlockWithSuccess:^(NSArray *hospitals, BOOL isHaveNextPage) {
-    NSMutableArray *array = [NSMutableArray arrayWithArray:self.hospitalViewModels];
-    for (HWHospital *hospital in hospitals) {
-      HWHospitalViewModel *viewModel = [HWHospitalViewModel viewModelWith:hospital];
-      [array addObject:viewModel];
-    }
-    _hospitalViewModels = array;
-    success();
-  } failure:^(NSString *errorMessage, NSInteger errorCode) {
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.hospitals];
+    [tempArray addObjectsFromArray:hospitals];
+    _hospitals = tempArray;
+    callback(HWStoreDataStateNormal,nil);
+  } failure:^(NSInteger errorCode, NSString *errorMessage) {
     if (errorCode == HWRequestValidationErrorInvalidNoContent) {
-      failure(HWStoreErrorTypeNoNextPage,errorMessage);
+      callback(HWStoreDataStateNoNextPage,errorMessage);
       return;
     }
-    failure(HWStoreErrorTypeNone,errorMessage);
+    callback(HWStoreDataStateNoContent,errorMessage);
   }];
-  
 }
-
 
 - (HWHomeApi *)api
 {

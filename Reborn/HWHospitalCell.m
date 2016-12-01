@@ -8,13 +8,10 @@
 
 #import "HWHospitalCell.h"
 #import <Masonry/Masonry.h>
-#import <UIImageView+WebCache.h>
+#import "UIImageView+WebCache.h"
 
 @interface HWHospitalCell ()
 
-@property (nonatomic, strong) UIImageView *pictureView;
-@property (nonatomic, strong) UILabel *nameLabel;
-@property (nonatomic, strong) UILabel *addressLabel;
 
 @end
 
@@ -29,14 +26,6 @@
   [self.contentView addSubview:self.pictureView];
   [self.contentView addSubview:self.nameLabel];
   [self.contentView addSubview:self.addressLabel];
-  
-}
-
-- (void)bindDataWith:(HWHospitalViewModel *)viewModel
-{
-  [_pictureView sd_setImageWithURL:viewModel.pictureURL placeholderImage:nil];
-  _nameLabel.text = viewModel.hospitalName;
-  _addressLabel.text = viewModel.addressName;
 }
 
 - (void)cellConstraints

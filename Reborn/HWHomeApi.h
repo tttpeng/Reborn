@@ -9,17 +9,15 @@
 #import "HWRequest.h"
 
 typedef void(^HWHomeApiCompletionBlock)( NSArray * hospitals);
-typedef void(^HWHomeApiFailureBlock)(NSString *errorMessage, NSInteger errorCode);
+typedef void(^HWHomeApiFailureBlock)(NSInteger errorCode, NSString *errorMessage);
 
 
 @interface HWHomeApi : HWRequest
-
 
 - (void)loadDataWithCompletionBlockWithSuccess:(HWHomeApiCompletionBlock)success
                                        failure:(HWHomeApiFailureBlock)failure;
 
 - (void)loadNextPageWithCompletionBlockWithSuccess:(void(^)(NSArray *hospitals, BOOL isHaveNextPage))success
                                        failure:(HWHomeApiFailureBlock)failure;
-
 
 @end

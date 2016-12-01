@@ -51,6 +51,5 @@
 
 
 
-- (void)saveWithKey:(NSString *)key;
 
 @end
